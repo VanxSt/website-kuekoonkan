@@ -2,7 +2,7 @@ import React from 'react';
 
 const StatsSection = () => {
     return (
-        <div className="bg-sky-600 py-16 text-white">
+        <section className="bg-sky-600 py-16 text-white" aria-label="ตัวเลขสำคัญ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-sky-500/50">
                     <div>
@@ -23,7 +23,7 @@ const StatsSection = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

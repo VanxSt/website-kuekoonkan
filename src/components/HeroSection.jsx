@@ -1,7 +1,7 @@
 import React from 'react';
 import { Truck, Clock, BadgeCheck, ShoppingCart, ShoppingBag, Facebook, Package } from 'lucide-react';
 import { motion } from 'framer-motion';
-import bannerDecor from '../assets/รูปแต่ง banner.png';
+import bannerDecor from '../assets/รูปแต่ง banner.webp';
 
 const HeroSection = () => {
     const floatingAnimation = {
@@ -14,7 +14,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="relative pt-24 pb-12 overflow-hidden bg-gradient-to-b from-primary-50 to-white">
+        <section className="relative pt-24 pb-12 overflow-hidden bg-gradient-to-b from-primary-50 to-white" aria-label="ส่วนต้อนรับ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -63,17 +63,17 @@ const HeroSection = () => {
 
                         {/* Social Links */}
                         <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                            <a href="#" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md">
+                            <a href="#" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Shopee">
                                 <ShoppingBag size={16} /> Shopee
                             </a>
-                            <a href="#" className="flex items-center gap-2 bg-[#0f146d] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md">
+                            <a href="#" className="flex items-center gap-2 bg-[#0f146d] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Lazada">
                                 <ShoppingBag size={16} /> Lazada
                             </a>
-                            <a href="#" className="flex items-center gap-2 bg-black text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
+                            <a href="#" className="flex items-center gap-2 bg-black text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด TikTok">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
                                 TikTok
                             </a>
-                            <a href="#" className="flex items-center gap-2 bg-[#1877F2] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md">
+                            <a href="#" className="flex items-center gap-2 bg-[#1877F2] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Facebook">
                                 <Facebook size={16} /> Facebook
                             </a>
                         </div>
@@ -93,8 +93,9 @@ const HeroSection = () => {
                         >
                             <img
                                 src={bannerDecor}
-                                alt="Shop Decoration"
+                                alt="ภาพรวมสินค้าร้านเกื้อกูลกัน วัตถุดิบเบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์"
                                 className="w-full max-w-[150%] lg:max-w-6xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-[50px]"
+                                loading="lazy"
                             />
 
                             {/* Floating Card 1: Good Packaging (Top Right) */}
@@ -145,7 +146,7 @@ const HeroSection = () => {
 
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

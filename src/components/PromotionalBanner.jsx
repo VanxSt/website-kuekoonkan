@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Tag, Clock, ArrowRight } from 'lucide-react';
-import shopImage from '../assets/shop_image.jpg';
-import welcomePersonImage from '../assets/ภาพคนยินดีต้อนรับ.jpg';
+import shopImage from '../assets/shop_image.webp';
+import welcomePersonImage from '../assets/ภาพคนยินดีต้อนรับ.webp';
 
 const offers = [
     {
@@ -43,7 +43,7 @@ const PromotionalBanner = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % offers.length);
-        }, 8000); // Increased duration for reading text
+        }, 8000);
         return () => clearInterval(timer);
     }, []);
 
@@ -73,7 +73,7 @@ const PromotionalBanner = () => {
     };
 
     return (
-        <div className="relative w-full h-[300px] md:h-[400px] overflow-hidden bg-gray-100">
+        <section className="relative w-full h-[300px] md:h-[400px] overflow-hidden bg-gray-100" aria-label="โปรโมชั่นและข่าวสาร" role="region">
             <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                     key={currentIndex}
@@ -97,7 +97,7 @@ const PromotionalBanner = () => {
                                 transition={{ delay: 0.2 }}
                                 className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-6"
                             >
-                                <Clock size={16} /> {offers[currentIndex].title}
+                                <Clock size={16} aria-hidden="true" /> {offers[currentIndex].title}
                             </motion.div>
 
                             <motion.h2
@@ -124,7 +124,7 @@ const PromotionalBanner = () => {
                                 transition={{ delay: 0.5 }}
                                 className="bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition flex items-center gap-2 mx-auto md:mx-0"
                             >
-                                {offers[currentIndex].code} <ArrowRight size={20} />
+                                {offers[currentIndex].code} <ArrowRight size={20} aria-hidden="true" />
                             </motion.button>
                         </div>
 
@@ -134,16 +134,17 @@ const PromotionalBanner = () => {
                                 <motion.img
                                     key={`img-${currentIndex}`}
                                     src={offers[currentIndex].image}
-                                    alt={offers[currentIndex].title}
+                                    alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
                                     initial={{ opacity: 0, x: 50 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5 }}
                                     className="h-full w-full object-cover opacity-50 mask-image-linear-gradient"
                                     style={{ maskImage: 'linear-gradient(to left, black 60%, transparent 100%)' }}
+                                    loading="lazy"
                                 />
                             ) : (
                                 <div className="opacity-20 transform rotate-12 translate-x-10 translate-y-10">
-                                    <Tag size={300} />
+                                    <Tag size={300} aria-hidden="true" />
                                 </div>
                             )}
                         </div>
@@ -155,28 +156,33 @@ const PromotionalBanner = () => {
             <button
                 onClick={prevSlide}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white hover:bg-white/40 transition z-20"
+                aria-label="สไลด์ก่อนหน้า"
             >
                 <ChevronLeft size={24} />
             </button>
             <button
                 onClick={nextSlide}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white hover:bg-white/40 transition z-20"
+                aria-label="สไลด์ถัดไป"
             >
                 <ChevronRight size={24} />
             </button>
 
             {/* Indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20" role="tablist" aria-label="ตัวเลือกสไลด์">
                 {offers.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
                         className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/80'
                             }`}
+                        role="tab"
+                        aria-selected={index === currentIndex}
+                        aria-label={`สไลด์ ${index + 1}`}
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

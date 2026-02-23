@@ -2,13 +2,13 @@ import React from 'react';
 import { Utensils, Package, Cookie, Droplet, Sparkles, Box } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
+    <article className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
         <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center text-sky-600 mb-4">
             <Icon size={24} />
         </div>
         <h3 className="font-bold text-lg text-gray-800 mb-2">{title}</h3>
         <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
-    </div>
+    </article>
 );
 
 const ServiceGrid = () => {
@@ -46,7 +46,7 @@ const ServiceGrid = () => {
     ];
 
     return (
-        <div className="py-20 bg-white" id="services">
+        <section className="py-20 bg-white" id="services" aria-label="หมวดหมู่สินค้า">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <span className="inline-block py-2 px-6 rounded-full bg-sky-100 text-sky-600 text-base font-bold mb-6">หมวดหมู่สินค้า</span>
@@ -64,7 +64,7 @@ const ServiceGrid = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

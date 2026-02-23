@@ -1,21 +1,21 @@
 import React from 'react';
 import { ShoppingCart, Star } from 'lucide-react';
-import product1 from '../assets/รวมรูปสินค้า/รวมกล่อง PG 1.jpg';
-import product2 from '../assets/รวมรูปสินค้า/รวมน้มข้นหวาน 2.jpg';
-import product3 from '../assets/รวมรูปสินค้า/รวมสินค้าถั่ว 3.jpg';
-import product4 from '../assets/รวมรูปสินค้า/รวมอี้เหวินผงชานม 4.jpg';
-import product5 from '../assets/รวมรูปสินค้า/รวมน้ำหวาน 5.jpg';
-import product6 from '../assets/รวมรูปสินค้า/รวมมายองเนส 6.jpg';
+import product1 from '../assets/รวมรูปสินค้า/รวมกล่อง PG 1.webp';
+import product2 from '../assets/รวมรูปสินค้า/รวมน้มข้นหวาน 2.webp';
+import product3 from '../assets/รวมรูปสินค้า/รวมสินค้าถั่ว 3.webp';
+import product4 from '../assets/รวมรูปสินค้า/รวมอี้เหวินผงชานม 4.webp';
+import product5 from '../assets/รวมรูปสินค้า/รวมน้ำหวาน 5.webp';
+import product6 from '../assets/รวมรูปสินค้า/รวมมายองเนส 6.webp';
 
 const ProductCard = ({ name, price, rating, image, isNew, link }) => (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden group">
+    <article className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 overflow-hidden group">
         <div className="relative h-48 bg-gray-100 overflow-hidden">
             {isNew && (
                 <span className="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
                     สินค้าใหม่
                 </span>
             )}
-            <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src={image} alt={`สินค้า ${name} ร้านเกื้อกูลกัน`} className="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" width="300" height="192" />
 
             {/* Quick Action */}
             <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
@@ -40,12 +40,12 @@ const ProductCard = ({ name, price, rating, image, isNew, link }) => (
 
             <div className="flex justify-between items-center">
                 <span className="text-xl font-bold text-primary-600">฿{price}</span>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-primary-50 text-primary-600 hover:bg-primary-500 hover:text-white transition">
+                <a href={link} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-primary-50 text-primary-600 hover:bg-primary-500 hover:text-white transition" aria-label={`สั่งซื้อ ${name}`}>
                     <ShoppingCart size={20} />
                 </a>
             </div>
         </div>
-    </div>
+    </article>
 );
 
 const ProductShowcase = () => {
@@ -59,7 +59,7 @@ const ProductShowcase = () => {
     ];
 
     return (
-        <div className="py-20 bg-primary-50/50" id="products">
+        <section className="py-20 bg-primary-50/50" id="products" aria-label="สินค้าแนะนำ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <span className="px-4 py-1 rounded-full bg-primary-50 text-primary-600 text-sm font-semibold">สินค้าแนะนำ</span>
@@ -81,7 +81,7 @@ const ProductShowcase = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

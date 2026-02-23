@@ -17,29 +17,24 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       <Navbar />
-      <PromotionalBanner />
-      <HeroSection />
+      <main>
+        <PromotionalBanner />
+        <HeroSection />
 
+        <ReviewSection />
 
+        <ServiceGrid />
 
-      {/* Wave Separator or simple section break */}
+        <ProductShowcase />
 
-      <ReviewSection />
+        <StatsSection />
 
-      <ServiceGrid />
+        <AboutSection />
 
-      <ProductShowcase />
+        <SocialGrid />
 
-
-
-      <StatsSection />
-
-      <AboutSection />
-
-      <SocialGrid />
-
-      <MapSection />
-
+        <MapSection />
+      </main>
       <Footer />
       <CookieConsent />
     </div>

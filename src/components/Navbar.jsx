@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingCart, Search } from 'lucide-react';
-import logo from '../assets/logo.jpg';
-// Image removed as per user request
-// import tukkyImage from '../assets/ภาพคนยินดีต้อนรับ.jpg';
+import logo from '../assets/logo.webp';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 w-full bg-white z-50 shadow-sm">
+        <nav className="sticky top-0 w-full bg-white z-50 shadow-sm" aria-label="เมนูหลัก">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-24">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center gap-3">
-                        <img src={logo} alt="Kuekoonkan Logo" className="h-20 w-20 rounded-full object-cover border border-gray-100 shadow-sm" />
+                        <img src={logo} alt="โลโก้ร้านเกื้อกูลกัน Food Supply" className="h-20 w-20 rounded-full object-cover border border-gray-100 shadow-sm" width="80" height="80" />
                         <div className="flex items-baseline gap-2">
                             <span className="font-bold text-xl text-primary-500 leading-none">ร้านเกื้อกูลกัน</span>
                             <span className="text-xs text-primary-500 font-medium">Food Supply</span>
@@ -31,14 +29,14 @@ const Navbar = () => {
 
                     {/* Icons */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <button className="text-gray-600 hover:text-primary-500">
+                        <button className="text-gray-600 hover:text-primary-500" aria-label="ค้นหา">
                             <Search size={20} />
                         </button>
                     </div>
 
                     {/* Mobile menu button */}
                     <div className="md:hidden flex items-center">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600">
+                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600" aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"}>
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
