@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Tag, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const MotionLink = motion.create(Link);
 import shopImage from '../assets/shop_image.webp';
 import welcomePersonImage from '../assets/ภาพคนยินดีต้อนรับ.webp';
 
@@ -13,6 +16,7 @@ const offers = [
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "รู้จักเรามากขึ้น",
+        link: "/about",
         image: shopImage
     },
     {
@@ -23,6 +27,7 @@ const offers = [
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "ปรึกษาเรา",
+        link: "/contact",
         image: welcomePersonImage
     },
     {
@@ -33,6 +38,7 @@ const offers = [
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "ดูสินค้าแนะนำ",
+        link: "/products",
         image: shopImage
     }
 ];
@@ -118,14 +124,15 @@ const PromotionalBanner = () => {
                                 {offers[currentIndex].description}
                             </motion.p>
 
-                            <motion.button
+                            <MotionLink
+                                to={offers[currentIndex].link}
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition flex items-center gap-2 mx-auto md:mx-0"
+                                className="bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition inline-flex w-fit items-center gap-2 mx-auto md:mx-0"
                             >
                                 {offers[currentIndex].code} <ArrowRight size={20} aria-hidden="true" />
-                            </motion.button>
+                            </MotionLink>
                         </div>
 
                         {/* Image/Decorative Elements */}
@@ -182,7 +189,7 @@ const PromotionalBanner = () => {
                     />
                 ))}
             </div>
-        </section>
+        </section >
     );
 };
 
