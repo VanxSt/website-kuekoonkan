@@ -1,43 +1,32 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import ServiceGrid from './components/ServiceGrid';
-import ProductShowcase from './components/ProductShowcase';
-import ReviewSection from './components/ReviewSection';
-import StatsSection from './components/StatsSection';
-import SocialGrid from './components/SocialGrid';
-import MapSection from './components/MapSection';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
-
-import PromotionalBanner from './components/PromotionalBanner';
-import AboutSection from './components/AboutSection';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 font-sans">
-      <Navbar />
-      <main>
-        <PromotionalBanner />
-        <HeroSection />
-
-        <ReviewSection />
-
-        <ServiceGrid />
-
-        <ProductShowcase />
-
-        <StatsSection />
-
-        <AboutSection />
-
-        <SocialGrid />
-
-        <MapSection />
-      </main>
-      <Footer />
-      <CookieConsent />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-slate-50 font-sans">
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <CookieConsent />
+      </div>
+    </Router>
   );
 }
 

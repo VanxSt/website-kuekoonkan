@@ -1,30 +1,80 @@
 import React, { useState } from 'react';
-import { Menu, X, ShoppingCart, Search } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.webp';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const navLinks = [
+        { to: '/', label: 'หน้าแรก' },
+        { to: '/products', label: 'สินค้า' },
+        { to: '/#services', label: 'หมวดหมู่สินค้า', isHash: true },
+        { to: '/about', label: 'เกี่ยวกับเรา' },
+        { to: '/contact', label: 'ติดต่อเรา' },
+    ];
+
+    const isActive = (path) => {
+        if (path.includes('#')) return false;
+        return location.pathname === path;
+    };
+
+    const handleHashClick = (e, hash) => {
+        e.preventDefault();
+        const targetId = hash.split('#')[1];
+
+        if (location.pathname === '/') {
+            // อยู่หน้าแรกอยู่แล้ว → scroll ไปที่ section
+            const el = document.getElementById(targetId);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // อยู่หน้าอื่น → ไปหน้าแรกก่อน แล้ว scroll
+            navigate('/');
+            setTimeout(() => {
+                const el = document.getElementById(targetId);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+        setIsOpen(false);
+    };
 
     return (
         <nav className="sticky top-0 w-full bg-white z-50 shadow-sm" aria-label="เมนูหลัก">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-24">
                     {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center gap-3">
+                    <Link to="/" className="flex-shrink-0 flex items-center gap-3" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                         <img src={logo} alt="โลโก้ร้านเกื้อกูลกัน Food Supply" className="h-20 w-20 rounded-full object-cover border border-gray-100 shadow-sm" width="80" height="80" />
                         <div className="flex items-baseline gap-2">
                             <span className="font-bold text-xl text-primary-500 leading-none">ร้านเกื้อกูลกัน</span>
                             <span className="text-xs text-primary-500 font-medium">Food Supply</span>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-8 items-center">
-                        <a href="#" className="text-gray-700 hover:text-primary-500 transition">หน้าแรก</a>
-                        <a href="#about" className="text-gray-700 hover:text-primary-500 transition">เกี่ยวกับเรา</a>
-                        <a href="#products" className="text-gray-700 hover:text-primary-500 transition">สินค้า</a>
-                        <a href="#services" className="text-gray-700 hover:text-primary-500 transition">หมวดหมู่สินค้า</a>
-                        <a href="#contact" className="text-gray-700 hover:text-primary-500 transition">ติดต่อเรา</a>
+                        {navLinks.map((link) => (
+                            link.isHash ? (
+                                <a
+                                    key={link.to}
+                                    href={link.to}
+                                    onClick={(e) => handleHashClick(e, link.to)}
+                                    className="text-gray-700 hover:text-primary-500 transition font-medium cursor-pointer"
+                                >
+                                    {link.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    className={`transition font-medium ${isActive(link.to) ? 'text-primary-500 font-bold' : 'text-gray-700 hover:text-primary-500'}`}
+                                >
+                                    {link.label}
+                                </Link>
+                            )
+                        ))}
                     </div>
 
                     {/* Icons */}
@@ -47,11 +97,27 @@ const Navbar = () => {
             {isOpen && (
                 <div className="md:hidden bg-white border-t">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50">หน้าแรก</a>
-                        <a href="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50">เกี่ยวกับเรา</a>
-                        <a href="#products" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50">สินค้า</a>
-                        <a href="#services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50">หมวดหมู่สินค้า</a>
-                        <a href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50">ติดต่อเรา</a>
+                        {navLinks.map((link) => (
+                            link.isHash ? (
+                                <a
+                                    key={link.to}
+                                    href={link.to}
+                                    onClick={(e) => handleHashClick(e, link.to)}
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50 cursor-pointer"
+                                >
+                                    {link.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    onClick={() => setIsOpen(false)}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(link.to) ? 'text-primary-500 bg-primary-50 font-bold' : 'text-gray-700 hover:text-sky-600 hover:bg-gray-50'}`}
+                                >
+                                    {link.label}
+                                </Link>
+                            )
+                        ))}
                     </div>
                 </div>
             )}

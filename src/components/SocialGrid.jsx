@@ -61,7 +61,7 @@ const SocialGrid = () => {
             ),
             bottomIconColor: 'bg-[#06C755]',
             color: 'bg-white !p-0',
-            link: '#'
+            link: 'https://lin.ee/A2VWWj87'
         },
         {
             title: 'Facebook',
@@ -71,7 +71,7 @@ const SocialGrid = () => {
             bottomIcon: Facebook,
             color: 'bg-[#1877F2]',
             bottomIconColor: 'bg-[#1877F2]',
-            link: '#'
+            link: 'https://www.facebook.com/kuakoonkan'
         },
         {
             title: 'TikTok',
@@ -87,7 +87,7 @@ const SocialGrid = () => {
             ),
             color: 'bg-[#010101]',
             bottomIconColor: 'bg-[#010101]',
-            link: '#'
+            link: 'https://www.tiktok.com/@kuekoonkan'
         },
         {
             title: '',
@@ -101,7 +101,7 @@ const SocialGrid = () => {
             ),
             color: 'bg-[#EE4D2D] !p-0',
             bottomIconColor: 'bg-[#EE4D2D]',
-            link: '#'
+            link: 'https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296'
         },
         {
             title: '',
@@ -115,7 +115,7 @@ const SocialGrid = () => {
             ),
             color: 'bg-[#0f146d] !p-0',
             bottomIconColor: 'bg-white',
-            link: '#'
+            link: 'https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp'
         }
     ];
 

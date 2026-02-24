@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Clock, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import lazadaLogo from '../assets/lazada.webp';
 import shopeeLogo from '../assets/shopee.webp';
 import lineLogo from '../assets/LINE_REAL.webp';
@@ -25,35 +26,35 @@ const Footer = () => {
                                 <span className="text-sm font-medium">โทรศัพท์</span>
                             </a>
                             {/* Line */}
-                            <a href="#" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดต่อผ่าน LINE">
+                            <a href="https://lin.ee/A2VWWj87" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดต่อผ่าน LINE">
                                 <div className="bg-[#06C755] p-2 rounded-full group-hover:opacity-90 transition shrink-0">
                                     <img src={lineLogo} alt="LINE" className="w-[18px] h-[18px] object-contain" width="18" height="18" loading="lazy" />
                                 </div>
                                 <span className="text-sm font-medium">Line</span>
                             </a>
                             {/* Facebook */}
-                            <a href="#" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดตามเราบน Facebook">
+                            <a href="https://www.facebook.com/kuakoonkan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดตามเราบน Facebook">
                                 <div className="bg-[#1877F2] p-2 rounded-full group-hover:opacity-90 transition shrink-0">
                                     <Facebook size={18} />
                                 </div>
                                 <span className="text-sm font-medium">Facebook</span>
                             </a>
                             {/* TikTok */}
-                            <a href="#" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดตามเราบน TikTok">
+                            <a href="https://www.tiktok.com/@kuekoonkan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดตามเราบน TikTok">
                                 <div className="bg-black p-2 rounded-full group-hover:opacity-90 transition shrink-0">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" /></svg>
                                 </div>
                                 <span className="text-sm font-medium">TikTok</span>
                             </a>
                             {/* Shopee */}
-                            <a href="#" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Shopee">
+                            <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Shopee">
                                 <div className="bg-white rounded-full group-hover:opacity-90 transition shrink-0 overflow-hidden w-[34px] h-[34px] flex items-center justify-center border border-gray-200">
                                     <img src={shopeeLogo} alt="Shopee" className="w-full h-full object-cover" loading="lazy" />
                                 </div>
                                 <span className="text-sm font-medium">Shopee</span>
                             </a>
                             {/* Lazada */}
-                            <a href="#" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Lazada">
+                            <a href="https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Lazada">
                                 <div className="bg-white rounded-full group-hover:opacity-90 transition shrink-0 overflow-hidden w-[34px] h-[34px] flex items-center justify-center border border-gray-200">
                                     <img src={lazadaLogo} alt="Lazada" className="w-full h-full object-cover" loading="lazy" />
                                 </div>
@@ -66,10 +67,10 @@ const Footer = () => {
                     <nav aria-label="ลิงก์ภายในเว็บไซต์">
                         <h4 className="font-bold text-lg mb-6">หน้าหลัก</h4>
                         <ul className="space-y-3 text-primary-100/80 text-sm">
-                            <li><a href="#" className="hover:text-white transition">หน้าแรก</a></li>
-                            <li><a href="#products" className="hover:text-white transition">สินค้าแนะนำ</a></li>
-                            <li><a href="#services" className="hover:text-white transition">บริการของเรา</a></li>
-                            <li><a href="#contact" className="hover:text-white transition">ติดต่อเรา</a></li>
+                            <li><Link to="/" className="hover:text-white transition">หน้าแรก</Link></li>
+                            <li><Link to="/products" className="hover:text-white transition">สินค้าแนะนำ</Link></li>
+                            <li><Link to="/about" className="hover:text-white transition">เกี่ยวกับเรา</Link></li>
+                            <li><Link to="/contact" className="hover:text-white transition">ติดต่อเรา</Link></li>
                         </ul>
                     </nav>
 

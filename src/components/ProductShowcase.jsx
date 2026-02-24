@@ -76,7 +76,7 @@ const ProductShowcase = () => {
                 </div>
 
                 <div className="mt-8 text-center sm:hidden">
-                    <a href="#" className="inline-flex items-center text-primary-600 font-medium">
+                    <a href="/products" className="inline-flex items-center text-primary-600 font-medium">
                         ดูสินค้าทั้งหมด <span className="ml-2">→</span>
                     </a>
                 </div>
