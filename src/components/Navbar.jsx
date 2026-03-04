@@ -43,10 +43,10 @@ const Navbar = () => {
     return (
         <nav className="sticky top-0 w-full bg-white z-50 shadow-sm" aria-label="เมนูหลัก">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-24">
+                <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0 flex items-center gap-3" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                        <img src={logo} alt="โลโก้ร้านเกื้อกูลกัน Food Supply" className="h-20 w-20 rounded-full object-cover border border-gray-100 shadow-sm" width="80" height="80" />
+                        <img src={logo} alt="โลโก้ร้านเกื้อกูลกัน Food Supply" className="h-16 w-auto object-contain" width="auto" height="64" />
                         <div className="flex items-baseline gap-2">
                             <span className="font-bold text-xl text-primary-500 leading-none">ร้านเกื้อกูลกัน</span>
                             <span className="text-xs text-primary-500 font-medium">Food Supply</span>

@@ -14,7 +14,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative pt-24 pb-12 overflow-hidden bg-gradient-to-b from-primary-50 to-white" aria-label="ส่วนต้อนรับ">
+        <section className="relative pt-16 pb-10 overflow-hidden bg-gradient-to-b from-primary-50 to-white" aria-label="ส่วนต้อนรับ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -29,48 +29,49 @@ const HeroSection = () => {
                             <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                             <span className="text-primary-700 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
                         </div>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
                             ยินดีต้อนรับเข้าสู่ <br />
                             <span className="text-primary-500 whitespace-nowrap">เกื้อกูลกัน Food Supply</span>
                         </h1>
-                        <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                        <p className="text-base md:text-lg text-gray-600 mb-5 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
                             เราคือศูนย์รวมวัตถุดิบและอุปกรณ์เบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์ครบวงจร
                             คัดสรรสินค้าคุณภาพเพื่อผู้ประกอบการและลูกค้าทุกท่าน ในราคามิตรภาพ
                         </p>
 
                         {/* Trust Badges */}
-                        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 font-medium text-sm">
-                                <Truck size={18} className="text-primary-500" /> จัดส่งรวดเร็ว
+                        <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-5 md:mb-8">
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                                <Truck size={16} className="text-primary-500" /> จัดส่งรวดเร็ว
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 font-medium text-sm">
-                                <Clock size={18} className="text-primary-500" /> เปิดทุกวัน
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                                <Clock size={16} className="text-primary-500" /> เปิดทุกวัน
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 font-medium text-sm">
-                                <BadgeCheck size={18} className="text-primary-500" /> สินค้าคุณภาพ
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                                <BadgeCheck size={16} className="text-primary-500" /> สินค้าคุณภาพ
                             </div>
-                        </div>
-                        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 font-medium text-sm">
-                                <BadgeCheck size={18} className="text-primary-500" /> สะดวก ครบ คุ้ม
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                                <BadgeCheck size={16} className="text-primary-500" /> สะดวก ครบ คุ้ม
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-gray-700 font-medium text-sm">
-                                <Truck size={18} className="text-primary-500" /> จัดส่งทั่วประเทศ
+                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                                <Truck size={16} className="text-primary-500" /> จัดส่งทั่วประเทศ
                             </div>
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-                            <button className="flex items-center gap-2 bg-primary-500 text-white px-8 py-3 rounded-full hover:bg-primary-600 transition shadow-lg shadow-primary-200 font-bold">
-                                <ShoppingCart size={20} /> สั่งซื้อสินค้า
-                            </button>
-                            <button className="flex items-center gap-2 bg-white text-primary-600 border-2 border-primary-600 px-8 py-3 rounded-full hover:bg-primary-50 transition font-bold">
+                        <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-5 md:mb-8">
+                            <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer"
+                                className="flex items-center gap-2 bg-orange-500 text-white px-7 py-3 rounded-full hover:bg-orange-600 active:scale-95 transition-all shadow-lg shadow-orange-200 font-bold text-base"
+                                aria-label="สั่งซื้อสินค้า">
+                                <ShoppingCart size={20} /> สั่งซื้อเลย!
+                            </a>
+                            <a href="/products"
+                                className="flex items-center gap-2 bg-white text-primary-600 border-2 border-primary-600 px-7 py-3 rounded-full hover:bg-primary-50 active:scale-95 transition-all font-bold text-base">
                                 ดูสินค้าทั้งหมด
-                            </button>
+                            </a>
                         </div>
 
                         {/* Social Links */}
-                        <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                        <div className="flex flex-wrap justify-center md:justify-start gap-2">
                             <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Shopee">
                                 <ShoppingBag size={16} /> Shopee
                             </a>
