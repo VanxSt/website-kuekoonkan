@@ -29,9 +29,9 @@ const HeroSection = () => {
                             <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                             <span className="text-primary-700 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
                         </div>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
-                            ยินดีต้อนรับเข้าสู่ <br />
-                            <span className="text-primary-500 whitespace-nowrap">เกื้อกูลกัน Food Supply</span>
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-snug mb-4 md:mb-6">
+                            ยินดีต้อนรับเข้าสู่{' '}<br className="hidden sm:block" />
+                            <span className="text-primary-500 break-words">เกื้อกูลกัน Food Supply</span>
                         </h1>
                         <p className="text-base md:text-lg text-gray-600 mb-5 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
                             เราคือศูนย์รวมวัตถุดิบและอุปกรณ์เบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์ครบวงจร
