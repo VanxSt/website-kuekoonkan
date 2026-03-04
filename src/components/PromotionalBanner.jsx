@@ -79,7 +79,7 @@ const PromotionalBanner = () => {
     };
 
     return (
-        <section className="relative w-full h-[300px] md:h-[400px] overflow-hidden bg-gray-100" aria-label="โปรโมชั่นและข่าวสาร" role="region">
+        <section className="relative w-full min-h-[320px] md:h-[400px] overflow-hidden bg-gray-100" aria-label="โปรโมชั่นและข่าวสาร" role="region">
             <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                     key={currentIndex}
@@ -94,7 +94,7 @@ const PromotionalBanner = () => {
                     }}
                     className={`absolute inset-0 w-full h-full flex items-center justify-center ${offers[currentIndex].bgClass}`}
                 >
-                    <div className="max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between z-10">
+                    <div className="max-w-7xl mx-auto px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between z-10">
 
                         <div className="text-center md:text-left text-white max-w-4xl">
                             <motion.div
@@ -110,7 +110,7 @@ const PromotionalBanner = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-md leading-tight md:leading-snug"
+                                className="text-xl sm:text-2xl md:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-md leading-snug"
                             >
                                 {offers[currentIndex].subtitle}
                             </motion.h2>
@@ -119,7 +119,7 @@ const PromotionalBanner = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-lg md:text-2xl mb-10 opacity-90 font-medium leading-relaxed"
+                                className="text-sm sm:text-base md:text-2xl mb-6 md:mb-10 opacity-90 font-medium leading-relaxed"
                             >
                                 {offers[currentIndex].description}
                             </motion.p>
