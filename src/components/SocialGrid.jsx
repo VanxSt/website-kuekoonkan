@@ -14,8 +14,8 @@ const SocialCard = ({ icon: Icon, title, link, color, bottomText, bottomLabel, b
         aria-label={`ติดต่อผ่าน ${bottomLabel}`}
     >
         {/* Top Section - Colored */}
-        <div className={`${color} aspect-square flex flex-col items-center justify-center text-white gap-2 p-4`}>
-            <Icon size={56} strokeWidth={1.5} />
+        <div className={`${color} aspect-[4/3] sm:aspect-square flex flex-col items-center justify-center text-white gap-2 p-4`}>
+            <Icon size={56} className="w-10 h-10 sm:w-14 sm:h-14" strokeWidth={1.5} />
             <h3 className="font-bold text-lg sm:text-2xl tracking-wide">{title}</h3>
         </div>
 

@@ -3,7 +3,7 @@ import { Utensils, Package, Cookie, Droplet, Sparkles, Box } from 'lucide-react'
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
     <article className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-        <div className="w-12 h-12 bg-sky-100 rounded-lg flex items-center justify-center text-sky-600 mb-4">
+        <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
             <Icon size={24} />
         </div>
         <h3 className="font-bold text-lg text-gray-800 mb-2">{title}</h3>
@@ -49,11 +49,11 @@ const ServiceGrid = () => {
         <section className="py-20 bg-white" id="services" aria-label="หมวดหมู่สินค้า">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <span className="inline-block py-2 px-6 rounded-full bg-sky-100 text-sky-600 text-base font-bold mb-6">หมวดหมู่สินค้า</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 mt-2 tracking-tight">
-                        สินค้าครบครัน <span className="text-sky-500">ทุกความต้องการ</span>
+                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 text-primary-600 text-sm sm:text-base font-bold mb-6">หมวดหมู่สินค้า</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mt-2 tracking-tight">
+                        สินค้าครบครัน <span className="text-primary-500">ทุกความต้องการ</span>
                     </h2>
-                    <p className="mt-6 text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium">
                         เรามีสินค้าหลากหลายหมวดหมู่ให้คุณเลือกซื้อ ครบจบในที่เดียว
                     </p>
                 </div>

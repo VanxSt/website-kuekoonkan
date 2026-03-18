@@ -4,8 +4,8 @@ import shopeeLogo from '../assets/shopee.webp';
 import lazadaLogo from '../assets/lazada.webp';
 
 const ReviewCard = ({ name, role, content, rating, avatar }) => (
-    <article className="bg-sky-50 p-8 rounded-2xl relative">
-        <Quote className="text-sky-200 absolute top-4 right-4" size={48} aria-hidden="true" />
+    <article className="bg-primary-50 p-6 sm:p-8 rounded-2xl relative">
+        <Quote className="text-primary-200 absolute top-4 right-4" size={48} aria-hidden="true" />
         <div className="flex text-yellow-400 mb-4" role="img" aria-label={`คะแนน ${rating} จาก 5 ดาว`}>
             {[...Array(5)].map((_, i) => (
                 <svg key={i} className={`w-5 h-5 ${i < rating ? 'fill-current' : 'text-gray-300 fill-current'}`} viewBox="0 0 20 20" aria-hidden="true">
@@ -42,8 +42,8 @@ const ReviewSection = () => {
         <section className="py-20 bg-white" aria-label="รีวิวจากลูกค้า">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <span className="inline-block py-2 px-6 rounded-full bg-sky-100 text-sky-600 text-base font-bold mb-4">รีวิวจากลูกค้า</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">ลูกค้าพูดถึงเรา</h2>
+                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 text-primary-600 text-sm sm:text-base font-bold mb-4">รีวิวจากลูกค้า</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-500 mb-4">ลูกค้าพูดถึงเรา</h2>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto">ความประทับใจจากลูกค้าที่ไว้วางใจเลือกซื้อสินค้ากับเรา</p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">

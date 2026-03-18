@@ -98,20 +98,19 @@ const AboutSection = () => {
                             </motion.div>
                         </div>
 
-                        {/* Floating Badge */}
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.5 }}
-                            className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white px-6 py-4 rounded-2xl shadow-xl flex items-center gap-4 whitespace-nowrap z-10 max-w-[90%]"
+                            className="absolute bottom-4 sm:bottom-10 left-1/2 -translate-x-1/2 bg-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-xl flex items-center gap-3 sm:gap-4 z-10 w-[90%] sm:w-max min-w-max sm:min-w-0"
                         >
-                            <div className="bg-primary-500 p-2 rounded-lg text-white">
+                            <div className="bg-primary-500 p-2 rounded-lg text-white shrink-0">
                                 <Heart size={20} fill="currentColor" />
                             </div>
-                            <div>
-                                <h4 className="font-bold text-gray-900 text-sm">เกื้อกูลกัน</h4>
-                                <p className="text-xs text-gray-500">พร้อมดูแลทุกความต้องการ</p>
+                            <div className="flex-1 min-w-0">
+                                <h4 className="font-bold text-gray-900 text-sm truncate">เกื้อกูลกัน</h4>
+                                <p className="text-[10px] sm:text-xs text-gray-500 truncate">พร้อมดูแลทุกความต้องการ</p>
                             </div>
                         </motion.div>
                     </div>

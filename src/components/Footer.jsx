@@ -9,9 +9,9 @@ const Footer = () => {
     return (
         <footer className="bg-primary-900 text-white pt-16 pb-8" aria-label="ส่วนท้ายเว็บไซต์">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
                     {/* Column 1: Brand */}
-                    <div className="col-span-1 md:col-span-1">
+                    <div className="col-span-1 sm:col-span-2 lg:col-span-1">
                         <h3 className="text-2xl font-bold text-primary-400 mb-4">ร้านเกื้อกูลกัน</h3>
                         <p className="text-primary-100 text-sm leading-relaxed mb-6">
                             แหล่งรวมวัตถุดิบและอุปกรณ์เบเกอรี่ เครื่องดื่มครบวงจร<br />
@@ -80,7 +80,7 @@ const Footer = () => {
                         <ul className="space-y-3 text-primary-100/80 text-sm">
                             <li>โทร: 095-642-7780</li>
                             <li>Line: 0956427780</li>
-                            <li>Email: primesukprimesuk@gmail.com</li>
+                            <li className="break-all">Email: primesukprimesuk@gmail.com</li>
                             <li className="flex items-start gap-2">
                                 <Clock size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
                                 <span>เปิดทุกวัน 06:00 - 22:00 น.</span>

@@ -12,7 +12,7 @@ const offers = [
         id: 1,
         title: "ร้านเกื้อกูลกัน",
         subtitle: "ร้านเกื้อกูลกัน เพื่อนคู่คิด ธุรกิจคุณ",
-        description: "เราพร้อมสนับสนุนทุกความสำเร็จของคุณ ด้วยสินค้าคุณภาพและราคาที่จริงใจ",
+        description: "ศูนย์รวมวัตถุดิบผู้ประกอบการ ร้านอาหาร คาเฟ่ โรงแรม และโรงงาน คัดสรรวัตถุดิบมาตราฐานส่งตรงถึงร้านคุณ",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "รู้จักเรามากขึ้น",
@@ -23,7 +23,7 @@ const offers = [
         id: 2,
         title: "ร้านเกื้อกูลกัน",
         subtitle: "ร้านเกื้อกูลกัน บริการประทับใจ ใส่ใจทุกรายละเอียด",
-        description: "คัดสรรวัตถุดิบที่ดีที่สุด แพ็คของอย่างดี ส่งไว เพื่อให้คุณส่งต่อความอร่อยได้อย่างมั่นใจ",
+        description: "พร้อมให้คำปรึกษาเรื่องการจัดซื้อวัตถุดิบ พร้อมสนับสนุนทุกความสำเร็จ ให้โตไปด้วยกัน",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "ปรึกษาเรา",
@@ -34,7 +34,7 @@ const offers = [
         id: 3,
         title: "ร้านเกื้อกูลกัน",
         subtitle: "ร้านเกื้อกูลกัน ครบ จบ ในที่เดียว",
-        description: "ศูนย์รวมวัตถุดิบ บรรจุภัณฑ์ และอุปกรณ์เบเกอรี่ที่ครบครันที่สุดสำหรับร้านคุณ",
+        description: "สินค้าครบมากกว่า 5,000 รายการ จัดส่งฟรี ทั่วประเทศ \nศูนย์รวมวัตถุดิบอาหาร เบเกอรี่ และบรรจุภัณฑ์",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
         code: "ดูสินค้าแนะนำ",
@@ -79,7 +79,7 @@ const PromotionalBanner = () => {
     };
 
     return (
-        <section className="relative w-full min-h-[320px] md:h-[400px] overflow-hidden bg-gray-100" aria-label="โปรโมชั่นและข่าวสาร" role="region">
+        <section className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] overflow-hidden bg-gray-100 flex items-center" aria-label="โปรโมชั่นและข่าวสาร" role="region">
             <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                     key={currentIndex}
@@ -96,7 +96,7 @@ const PromotionalBanner = () => {
                 >
                     <div className="max-w-7xl mx-auto px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between z-10">
 
-                        <div className="text-center md:text-left text-white max-w-4xl">
+                        <div className="text-center md:text-left text-white md:max-w-2xl lg:max-w-4xl relative z-20">
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -110,7 +110,7 @@ const PromotionalBanner = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="text-xl sm:text-2xl md:text-6xl font-extrabold mb-3 md:mb-6 drop-shadow-md leading-snug"
+                                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-md leading-snug"
                             >
                                 {offers[currentIndex].subtitle}
                             </motion.h2>
@@ -119,7 +119,7 @@ const PromotionalBanner = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-sm sm:text-base md:text-2xl mb-6 md:mb-10 opacity-90 font-medium leading-relaxed"
+                                className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 opacity-90 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 whitespace-pre-line"
                             >
                                 {offers[currentIndex].description}
                             </motion.p>
@@ -136,7 +136,7 @@ const PromotionalBanner = () => {
                         </div>
 
                         {/* Image/Decorative Elements */}
-                        <div className="hidden md:flex items-center justify-center w-1/3 h-full absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden">
+                        <div className="hidden md:flex items-center justify-center w-1/3 h-full absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden z-0">
                             {offers[currentIndex].image ? (
                                 <motion.img
                                     key={`img-${currentIndex}`}

@@ -29,7 +29,7 @@ const HeroSection = () => {
                             <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                             <span className="text-primary-700 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
                         </div>
-                        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-snug mb-4 md:mb-6">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-snug mb-4 md:mb-6">
                             ยินดีต้อนรับเข้าสู่{' '}<br className="hidden sm:block" />
                             <span className="text-primary-500 break-words">เกื้อกูลกัน Food Supply</span>
                         </h1>
@@ -93,7 +93,7 @@ const HeroSection = () => {
                     </motion.div>
 
                     {/* Image Content - Staggered Waterfall Grid */}
-                    <div className="relative h-[600px] w-full hidden md:flex items-center justify-center perspective-1000">
+                    <div className="relative h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] w-full flex items-center justify-center perspective-1000 mt-8 md:mt-0">
                         {/* Background Decor */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-blue-50/50 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
@@ -107,21 +107,21 @@ const HeroSection = () => {
                             <img
                                 src={bannerDecor}
                                 alt="ภาพรวมสินค้าร้านเกื้อกูลกัน วัตถุดิบเบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์"
-                                className="w-full max-w-[150%] lg:max-w-6xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-[50px]"
+                                className="w-[85%] sm:w-full max-w-[150%] lg:max-w-6xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-[50px]"
                                 loading="lazy"
                             />
 
                             {/* Floating Card 1: Good Packaging (Top Right) */}
                             <motion.div
                                 animate={floatingAnimation}
-                                className="absolute -top-10 -right-4 md:right-10 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20 border-l-4 border-primary-500"
+                                className="absolute -top-6 -right-2 sm:-top-10 sm:-right-4 md:right-10 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-primary-500"
                             >
-                                <div className="bg-primary-100 p-2 rounded-full text-primary-600">
-                                    <Package size={24} />
+                                <div className="bg-primary-100 p-1.5 sm:p-2 rounded-full text-primary-600">
+                                    <Package className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-sm md:text-base">สินค้าแพ็คดี</h4>
-                                    <p className="text-xs text-gray-500">ใส่ใจทุกกล่อง</p>
+                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">สินค้าแพ็คดี</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500">ใส่ใจทุกกล่อง</p>
                                 </div>
                             </motion.div>
 
@@ -129,14 +129,14 @@ const HeroSection = () => {
                             <motion.div
                                 animate={floatingAnimation}
                                 transition={{ delay: 0.5 }}
-                                className="absolute -bottom-4 -left-4 md:-left-8 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20 border-l-4 border-green-500"
+                                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 md:-left-8 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-green-500"
                             >
-                                <div className="bg-green-100 p-2 rounded-full text-green-600">
-                                    <BadgeCheck size={24} />
+                                <div className="bg-green-100 p-1.5 sm:p-2 rounded-full text-green-600">
+                                    <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-sm md:text-base">สินค้าคุณภาพ</h4>
-                                    <p className="text-xs text-gray-500">การันตี 100%</p>
+                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">สินค้าคุณภาพ</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500">การันตี 100%</p>
                                 </div>
                             </motion.div>
 
@@ -144,14 +144,14 @@ const HeroSection = () => {
                             <motion.div
                                 animate={floatingAnimation}
                                 transition={{ delay: 1 }}
-                                className="absolute -bottom-6 -right-4 md:right-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 z-20 border-l-4 border-orange-500"
+                                className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 md:right-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-orange-500"
                             >
-                                <div className="bg-orange-100 p-2 rounded-full text-orange-600">
-                                    <Truck size={24} />
+                                <div className="bg-orange-100 p-1.5 sm:p-2 rounded-full text-orange-600">
+                                    <Truck className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-sm md:text-base">จัดส่งไว</h4>
-                                    <p className="text-xs text-gray-500">ถึงมือทันใจ</p>
+                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">จัดส่งไว</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500">ถึงมือทันใจ</p>
                                 </div>
                             </motion.div>
                         </motion.div>

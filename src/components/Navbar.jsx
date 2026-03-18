@@ -54,7 +54,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-8 items-center">
+                    <div className="hidden md:flex space-x-4 lg:space-x-8 items-center">
                         {navLinks.map((link) => (
                             link.isHash ? (
                                 <a
