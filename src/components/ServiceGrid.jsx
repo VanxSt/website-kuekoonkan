@@ -2,12 +2,12 @@ import React from 'react';
 import { Utensils, Package, Cookie, Droplet, Sparkles, Box } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description }) => (
-    <article className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300">
-        <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 mb-4">
+    <article className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-md transition duration-300">
+        <div className="w-12 h-12 bg-primary-100 dark:bg-slate-700 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4">
             <Icon size={24} />
         </div>
-        <h3 className="font-bold text-lg text-gray-800 mb-2">{title}</h3>
-        <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+        <h3 className="font-bold text-lg text-gray-800 dark:text-white mb-2">{title}</h3>
+        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{description}</p>
     </article>
 );
 
@@ -46,14 +46,14 @@ const ServiceGrid = () => {
     ];
 
     return (
-        <section className="py-20 bg-white" id="services" aria-label="หมวดหมู่สินค้า">
+        <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300" id="services" aria-label="หมวดหมู่สินค้า">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 text-primary-600 text-sm sm:text-base font-bold mb-6">หมวดหมู่สินค้า</span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mt-2 tracking-tight">
+                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 dark:bg-slate-800 text-primary-600 dark:text-primary-400 text-sm sm:text-base font-bold mb-6">หมวดหมู่สินค้า</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mt-2 tracking-tight">
                         สินค้าครบครัน <span className="text-primary-500">ทุกความต้องการ</span>
                     </h2>
-                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto font-medium">
+                    <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-medium">
                         เรามีสินค้าหลากหลายหมวดหมู่ให้คุณเลือกซื้อ ครบจบในที่เดียว
                     </p>
                 </div>

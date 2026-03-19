@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Search } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.webp';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-0 w-full bg-white z-50 shadow-sm" aria-label="เมนูหลัก">
+        <nav className="sticky top-0 w-full bg-white dark:bg-gray-900 z-50 shadow-sm transition-colors duration-200" aria-label="เมนูหลัก">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
@@ -61,7 +62,7 @@ const Navbar = () => {
                                     key={link.to}
                                     href={link.to}
                                     onClick={(e) => handleHashClick(e, link.to)}
-                                    className="text-gray-700 hover:text-primary-500 transition font-medium cursor-pointer"
+                                    className="text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition font-medium cursor-pointer"
                                 >
                                     {link.label}
                                 </a>
@@ -69,7 +70,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.to}
                                     to={link.to}
-                                    className={`transition font-medium ${isActive(link.to) ? 'text-primary-500 font-bold' : 'text-gray-700 hover:text-primary-500'}`}
+                                    className={`transition font-medium ${isActive(link.to) ? 'text-primary-500 font-bold' : 'text-gray-700 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400'}`}
                                 >
                                     {link.label}
                                 </Link>
@@ -79,14 +80,16 @@ const Navbar = () => {
 
                     {/* Icons */}
                     <div className="hidden md:flex items-center space-x-4">
-                        <button className="text-gray-600 hover:text-primary-500" aria-label="ค้นหา">
+                        <ThemeToggle />
+                        <button className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400" aria-label="ค้นหา">
                             <Search size={20} />
                         </button>
                     </div>
 
                     {/* Mobile menu button */}
-                    <div className="md:hidden flex items-center">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600" aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"}>
+                    <div className="md:hidden flex items-center gap-2">
+                        <ThemeToggle />
+                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 dark:text-gray-300 p-2" aria-label={isOpen ? "ปิดเมนู" : "เปิดเมนู"}>
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
@@ -95,7 +98,7 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white border-t">
+                <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 transition-colors duration-200">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {navLinks.map((link) => (
                             link.isHash ? (
@@ -103,7 +106,7 @@ const Navbar = () => {
                                     key={link.to}
                                     href={link.to}
                                     onClick={(e) => handleHashClick(e, link.to)}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600 hover:bg-gray-50 cursor-pointer"
+                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer"
                                 >
                                     {link.label}
                                 </a>
@@ -112,7 +115,7 @@ const Navbar = () => {
                                     key={link.to}
                                     to={link.to}
                                     onClick={() => setIsOpen(false)}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(link.to) ? 'text-primary-500 bg-primary-50 font-bold' : 'text-gray-700 hover:text-sky-600 hover:bg-gray-50'}`}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(link.to) ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30 font-bold' : 'text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
                                 >
                                     {link.label}
                                 </Link>

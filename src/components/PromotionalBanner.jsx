@@ -79,7 +79,7 @@ const PromotionalBanner = () => {
     };
 
     return (
-        <section className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] overflow-hidden bg-gray-100 flex items-center" aria-label="โปรโมชั่นและข่าวสาร" role="region">
+        <section className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] overflow-hidden bg-gray-100 dark:bg-slate-950 flex items-center transition-colors duration-300" aria-label="โปรโมชั่นและข่าวสาร" role="region">
             <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                     key={currentIndex}

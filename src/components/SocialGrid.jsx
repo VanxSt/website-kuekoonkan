@@ -10,7 +10,7 @@ const SocialCard = ({ icon: Icon, title, link, color, bottomText, bottomLabel, b
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="block rounded-3xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 overflow-hidden bg-white group border border-gray-100"
+        className="block rounded-3xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300 overflow-hidden bg-white dark:bg-slate-800 group border border-gray-100 dark:border-slate-700"
         aria-label={`ติดต่อผ่าน ${bottomLabel}`}
     >
         {/* Top Section - Colored */}
@@ -26,11 +26,11 @@ const SocialCard = ({ icon: Icon, title, link, color, bottomText, bottomLabel, b
                     <BottomIcon size={20} />
                 </div>
                 <div className="truncate">
-                    <p className="font-bold text-gray-800 text-sm">{bottomLabel}</p>
-                    <p className="text-gray-500 text-xs truncate">{bottomText}</p>
+                    <p className="font-bold text-gray-800 dark:text-white text-sm">{bottomLabel}</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-xs truncate">{bottomText}</p>
                 </div>
             </div>
-            <div className="bg-gray-100 rounded-full p-2 text-gray-400 group-hover:bg-primary-50 group-hover:text-primary-500 transition">
+            <div className="bg-gray-100 dark:bg-slate-700 rounded-full p-2 text-gray-400 dark:text-gray-400 group-hover:bg-primary-50 dark:group-hover:bg-slate-600 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition">
                 <ChevronRight size={20} />
             </div>
         </div>
@@ -120,12 +120,12 @@ const SocialGrid = () => {
     ];
 
     return (
-        <section className="py-20 bg-primary-50/50" id="contact" aria-label="ช่องทางติดต่อ">
+        <section className="py-20 bg-primary-50/50 dark:bg-slate-900/50 transition-colors duration-300" id="contact" aria-label="ช่องทางติดต่อ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <span className="px-4 py-1 rounded-full bg-primary-100 text-primary-600 text-sm font-semibold">ติดต่อเรา</span>
-                    <h2 className="text-3xl font-bold text-primary-900 mt-4">สินค้าครบครัน <span className="text-primary-500">ทุกความต้องการ</span></h2>
-                    <p className="mt-2 text-gray-400">เข้าถึงง่าย ทุกช่องทางที่คุณสะดวก</p>
+                    <span className="px-4 py-1 rounded-full bg-primary-100 dark:bg-slate-800 text-primary-600 dark:text-primary-400 text-sm font-semibold">ติดต่อเรา</span>
+                    <h2 className="text-3xl font-bold text-primary-900 dark:text-white mt-4">สินค้าครบครัน <span className="text-primary-500">ทุกความต้องการ</span></h2>
+                    <p className="mt-2 text-gray-400 dark:text-gray-400">เข้าถึงง่าย ทุกช่องทางที่คุณสะดวก</p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

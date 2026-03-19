@@ -14,7 +14,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative pt-16 pb-10 overflow-hidden bg-gradient-to-b from-primary-50 to-white" aria-label="ส่วนต้อนรับ">
+        <section className="relative pt-16 pb-10 overflow-hidden bg-gradient-to-b from-primary-50 to-white dark:from-slate-900 dark:to-slate-800 transition-colors duration-300" aria-label="ส่วนต้อนรับ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 
@@ -25,34 +25,34 @@ const HeroSection = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center md:text-left z-20"
                     >
-                        <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary-50/80 backdrop-blur-sm border border-primary-100 mb-6">
+                        <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary-50/80 dark:bg-slate-800/80 backdrop-blur-sm border border-primary-100 dark:border-slate-700 mb-6">
                             <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-                            <span className="text-primary-700 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
+                            <span className="text-primary-700 dark:text-primary-400 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
                         </div>
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-snug mb-4 md:mb-6">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 dark:text-white leading-snug mb-4 md:mb-6">
                             ยินดีต้อนรับเข้าสู่{' '}<br className="hidden sm:block" />
                             <span className="text-primary-500 break-words">เกื้อกูลกัน Food Supply</span>
                         </h1>
-                        <p className="text-base md:text-lg text-gray-600 mb-5 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                        <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-5 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
                             เราคือศูนย์รวมวัตถุดิบและอุปกรณ์เบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์ครบวงจร
                             คัดสรรสินค้าคุณภาพเพื่อผู้ประกอบการและลูกค้าทุกท่าน ในราคามิตรภาพ
                         </p>
 
                         {/* Trust Badges */}
                         <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-5 md:mb-8">
-                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                            <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm text-gray-700 dark:text-gray-200 font-medium text-sm border dark:border-slate-700">
                                 <Truck size={16} className="text-primary-500" /> จัดส่งรวดเร็ว
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                            <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm text-gray-700 dark:text-gray-200 font-medium text-sm border dark:border-slate-700">
                                 <Clock size={16} className="text-primary-500" /> เปิดทุกวัน
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                            <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm text-gray-700 dark:text-gray-200 font-medium text-sm border dark:border-slate-700">
                                 <BadgeCheck size={16} className="text-primary-500" /> สินค้าคุณภาพ
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                            <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm text-gray-700 dark:text-gray-200 font-medium text-sm border dark:border-slate-700">
                                 <BadgeCheck size={16} className="text-primary-500" /> สะดวก ครบ คุ้ม
                             </div>
-                            <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm text-gray-700 font-medium text-sm">
+                            <div className="flex items-center gap-2 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-full shadow-sm text-gray-700 dark:text-gray-200 font-medium text-sm border dark:border-slate-700">
                                 <Truck size={16} className="text-primary-500" /> จัดส่งทั่วประเทศ
                             </div>
                         </div>
@@ -65,7 +65,7 @@ const HeroSection = () => {
                                 <ShoppingCart size={20} /> สั่งซื้อเลย!
                             </a>
                             <a href="/products"
-                                className="flex items-center gap-2 bg-white text-primary-600 border-2 border-primary-600 px-7 py-3 rounded-full hover:bg-primary-50 active:scale-95 transition-all font-bold text-base">
+                                className="flex items-center gap-2 bg-white dark:bg-slate-800 text-primary-600 dark:text-primary-400 border-2 border-primary-600 dark:border-primary-500 px-7 py-3 rounded-full hover:bg-primary-50 dark:hover:bg-slate-700 active:scale-95 transition-all font-bold text-base">
                                 ดูสินค้าทั้งหมด
                             </a>
                         </div>
@@ -114,14 +114,14 @@ const HeroSection = () => {
                             {/* Floating Card 1: Good Packaging (Top Right) */}
                             <motion.div
                                 animate={floatingAnimation}
-                                className="absolute -top-6 -right-2 sm:-top-10 sm:-right-4 md:right-10 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-primary-500"
+                                className="absolute -top-6 -right-2 sm:-top-10 sm:-right-4 md:right-10 bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-primary-500"
                             >
                                 <div className="bg-primary-100 p-1.5 sm:p-2 rounded-full text-primary-600">
                                     <Package className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">สินค้าแพ็คดี</h4>
-                                    <p className="text-[10px] sm:text-xs text-gray-500">ใส่ใจทุกกล่อง</p>
+                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-xs sm:text-sm md:text-base">สินค้าแพ็คดี</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">ใส่ใจทุกกล่อง</p>
                                 </div>
                             </motion.div>
 
@@ -129,14 +129,14 @@ const HeroSection = () => {
                             <motion.div
                                 animate={floatingAnimation}
                                 transition={{ delay: 0.5 }}
-                                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 md:-left-8 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-green-500"
+                                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 md:-left-8 bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-green-500"
                             >
                                 <div className="bg-green-100 p-1.5 sm:p-2 rounded-full text-green-600">
                                     <BadgeCheck className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">สินค้าคุณภาพ</h4>
-                                    <p className="text-[10px] sm:text-xs text-gray-500">การันตี 100%</p>
+                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-xs sm:text-sm md:text-base">สินค้าคุณภาพ</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">การันตี 100%</p>
                                 </div>
                             </motion.div>
 
@@ -144,14 +144,14 @@ const HeroSection = () => {
                             <motion.div
                                 animate={floatingAnimation}
                                 transition={{ delay: 1 }}
-                                className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 md:right-20 bg-white p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-orange-500"
+                                className="absolute -bottom-4 -right-2 sm:-bottom-6 sm:-right-4 md:right-20 bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-20 border-l-4 border-orange-500"
                             >
                                 <div className="bg-orange-100 p-1.5 sm:p-2 rounded-full text-orange-600">
                                     <Truck className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 text-xs sm:text-sm md:text-base">จัดส่งไว</h4>
-                                    <p className="text-[10px] sm:text-xs text-gray-500">ถึงมือทันใจ</p>
+                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-xs sm:text-sm md:text-base">จัดส่งไว</h4>
+                                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">ถึงมือทันใจ</p>
                                 </div>
                             </motion.div>
                         </motion.div>

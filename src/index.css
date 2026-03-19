@@ -21,3 +21,5 @@
      or just rely on using 'text-primary-500' in components. 
      For now, we define them. */
 }
+
+@custom-variant dark (&:is(.dark *));

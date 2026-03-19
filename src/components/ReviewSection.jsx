@@ -4,7 +4,7 @@ import shopeeLogo from '../assets/shopee.webp';
 import lazadaLogo from '../assets/lazada.webp';
 
 const ReviewCard = ({ name, role, content, rating, avatar }) => (
-    <article className="bg-primary-50 p-6 sm:p-8 rounded-2xl relative">
+    <article className="bg-primary-50 dark:bg-slate-800 p-6 sm:p-8 rounded-2xl relative transition-colors duration-300">
         <Quote className="text-primary-200 absolute top-4 right-4" size={48} aria-hidden="true" />
         <div className="flex text-yellow-400 mb-4" role="img" aria-label={`คะแนน ${rating} จาก 5 ดาว`}>
             {[...Array(5)].map((_, i) => (
@@ -13,25 +13,25 @@ const ReviewCard = ({ name, role, content, rating, avatar }) => (
                 </svg>
             ))}
         </div>
-        <p className="text-gray-600 mb-6 italic">"{content}"</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-6 italic">"{content}"</p>
         <div className="flex items-center">
             {avatar ? (
                 <img
                     src={avatar}
                     alt={`รีวิวจาก ${name}`}
-                    className="w-14 h-14 rounded-xl object-contain bg-white border border-gray-100 p-1"
+                    className="w-14 h-14 rounded-xl object-contain bg-white dark:bg-slate-700 border border-gray-100 dark:border-slate-600 p-1"
                     loading="lazy"
                     width="56"
                     height="56"
                 />
             ) : (
-                <div className="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 font-bold text-xl">
+                <div className="w-14 h-14 rounded-full bg-gray-300 dark:bg-slate-600 flex items-center justify-center text-gray-600 dark:text-gray-200 font-bold text-xl">
                     {name.charAt(0)}
                 </div>
             )}
             <div className="ml-4">
-                <h4 className="font-bold text-gray-900">{name}</h4>
-                <p className="text-sm text-gray-500">{role}</p>
+                <h4 className="font-bold text-gray-900 dark:text-white">{name}</h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{role}</p>
             </div>
         </div>
     </article>
@@ -39,12 +39,12 @@ const ReviewCard = ({ name, role, content, rating, avatar }) => (
 
 const ReviewSection = () => {
     return (
-        <section className="py-20 bg-white" aria-label="รีวิวจากลูกค้า">
+        <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300" aria-label="รีวิวจากลูกค้า">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 text-primary-600 text-sm sm:text-base font-bold mb-4">รีวิวจากลูกค้า</span>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-500 mb-4">ลูกค้าพูดถึงเรา</h2>
-                    <p className="text-xl text-gray-500 max-w-2xl mx-auto">ความประทับใจจากลูกค้าที่ไว้วางใจเลือกซื้อสินค้ากับเรา</p>
+                    <span className="inline-block py-2 px-6 rounded-full bg-primary-100 dark:bg-slate-800 text-primary-600 dark:text-primary-400 text-sm sm:text-base font-bold mb-4">รีวิวจากลูกค้า</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-500 dark:text-primary-400 mb-4">ลูกค้าพูดถึงเรา</h2>
+                    <p className="text-xl text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">ความประทับใจจากลูกค้าที่ไว้วางใจเลือกซื้อสินค้ากับเรา</p>
                 </div>
                 <div className="grid md:grid-cols-3 gap-8">
                     <ReviewCard
