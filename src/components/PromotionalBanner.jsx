@@ -10,7 +10,7 @@ const offers = [
     {
         id: 1,
         title: "ร้านเกื้อกูลกัน",
-        subtitle: "ร้านเกื้อกูลกัน เพื่อนคู่คิด ธุรกิจคุณ",
+        subtitle: <>ร้านเกื้อกูลกัน เพื่อนคู่คิด<br className="hidden md:block lg:hidden" /> ธุรกิจคุณ</>,
         description: "ศูนย์รวมวัตถุดิบผู้ประกอบการ ร้านอาหาร คาเฟ่ โรงแรม และโรงงาน คัดสรรวัตถุดิบมาตราฐานส่งตรงถึงร้านคุณ",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
