@@ -21,7 +21,7 @@ const offers = [
     {
         id: 2,
         title: "ร้านเกื้อกูลกัน",
-        subtitle: "ร้านเกื้อกูลกัน บริการประทับใจ ใส่ใจทุกรายละเอียด",
+        subtitle: "ร้านเกื้อกูลกัน บริการประทับใจ\nใส่ใจทุกรายละเอียด",
         description: "พร้อมให้คำปรึกษาเรื่องการจัดซื้อวัตถุดิบ พร้อมสนับสนุนทุกความสำเร็จ ให้โตไปด้วยกัน",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -109,7 +109,7 @@ const PromotionalBanner = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-md leading-snug"
+                                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-md leading-snug whitespace-pre-line"
                             >
                                 {offers[currentIndex].subtitle}
                             </motion.h2>
