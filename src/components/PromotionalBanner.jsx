@@ -135,24 +135,20 @@ const PromotionalBanner = () => {
                             </MotionLink>
                         </div>
 
-                        {/* Desktop Only: Original Layout (lg and above) */}
-                        <div className="hidden lg:flex items-center justify-center w-1/3 h-full absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden z-0">
-                            {offers[currentIndex].image ? (
+                        {/* Desktop Only: Side Image (lg and above) */}
+                        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[45%] pointer-events-none overflow-hidden z-0">
+                            {offers[currentIndex].image && (
                                 <motion.img
                                     key={`img-desktop-${currentIndex}`}
                                     src={offers[currentIndex].image}
                                     alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
-                                    initial={{ opacity: 0, x: 50 }}
+                                    initial={{ opacity: 0, x: 30 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.5 }}
-                                    className="h-full w-full object-cover opacity-50 mask-image-linear-gradient"
-                                    style={{ maskImage: 'linear-gradient(to left, black 60%, transparent 100%)' }}
+                                    transition={{ duration: 0.6 }}
+                                    className="h-full w-full object-cover object-center"
+                                    style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 60%)' }}
                                     loading="lazy"
                                 />
-                            ) : (
-                                <div className="opacity-20 transform rotate-12 translate-x-10 translate-y-10">
-                                    <Tag size={300} aria-hidden="true" />
-                                </div>
                             )}
                         </div>
 
