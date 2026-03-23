@@ -146,7 +146,7 @@ const PromotionalBanner = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6 }}
                                     className="h-full w-full object-cover object-center"
-                                    style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 25%, black 60%)' }}
+                                    style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 35%)' }}
                                     loading="lazy"
                                 />
                             )}
@@ -167,10 +167,10 @@ const PromotionalBanner = () => {
                                         loading="lazy"
                                     />
                                     {/* Tablet Overlay (md to lg) */}
-                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/80 to-transparent w-full"></div>
-                                    
+                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600/90 via-primary-500/50 to-transparent w-[65%]"></div>
+
                                     {/* Mobile Overlay (smaller than md) */}
-                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/90 via-primary-500/70 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 via-primary-500/50 to-transparent"></div>
                                 </>
                             ) : (
                                 <div className="opacity-10 transform flex items-center justify-center w-full h-full">
