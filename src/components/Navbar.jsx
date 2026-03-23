@@ -97,33 +97,36 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
-                <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800 transition-colors duration-200">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navLinks.map((link) => (
-                            link.isHash ? (
-                                <a
-                                    key={link.to}
-                                    href={link.to}
-                                    onClick={(e) => handleHashClick(e, link.to)}
-                                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer"
-                                >
-                                    {link.label}
-                                </a>
-                            ) : (
-                                <Link
-                                    key={link.to}
-                                    to={link.to}
-                                    onClick={() => setIsOpen(false)}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium ${isActive(link.to) ? 'text-primary-500 bg-primary-50 dark:bg-primary-900/30 font-bold' : 'text-gray-700 dark:text-gray-300 hover:text-sky-600 dark:hover:text-primary-400 hover:bg-gray-50 dark:hover:bg-gray-800'}`}
-                                >
-                                    {link.label}
-                                </Link>
-                            )
-                        ))}
+            <div
+                className={`md:hidden absolute top-20 left-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b dark:border-gray-800 shadow-lg transition-all duration-300 ease-in-out origin-top ${isOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}
+            >
+                <div className="px-4 pt-2 pb-6 space-y-2 sm:px-6">
+                    {navLinks.map((link) => (
+                        link.isHash ? (
+                            <a
+                                key={link.to}
+                                href={link.to}
+                                onClick={(e) => handleHashClick(e, link.to)}
+                                className="block px-4 py-3 rounded-xl text-base font-medium text-gray-800 dark:text-gray-200 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+                            >
+                                {link.label}
+                            </a>
+                        ) : (
+                            <Link
+                                key={link.to}
+                                to={link.to}
+                                onClick={() => setIsOpen(false)}
+                                className={`block px-4 py-3 rounded-xl text-base font-medium transition-colors ${isActive(link.to) ? 'text-primary-600 bg-primary-50 dark:bg-primary-900/40 font-bold border-l-4 border-primary-500' : 'text-gray-800 dark:text-gray-200 hover:text-primary-600 hover:bg-primary-50 dark:hover:bg-gray-800'}`}
+                            >
+                                {link.label}
+                            </Link>
+                        )
+                    ))}
+                    <div className="pt-4 mt-2 border-t dark:border-gray-800 flex justify-center gap-4">
+                        <ThemeToggle />
                     </div>
                 </div>
-            )}
+            </div>
         </nav>
     );
 };

@@ -69,14 +69,16 @@ const ProductShowcase = () => {
                     <p className="text-gray-500 dark:text-gray-400">สินค้าคุณภาพดี ราคาย่อมเยา พร้อมบริการจัดส่ง</p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div className="flex overflow-x-auto snap-x snap-mandatory pb-6 pt-2 gap-4 md:grid md:grid-cols-3 lg:grid-cols-6 md:overflow-visible hide-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
                     {products.map((product, index) => (
-                        <ProductCard key={index} {...product} />
+                        <div key={index} className="min-w-[160px] w-[160px] sm:min-w-[200px] sm:w-[200px] md:w-full md:h-full snap-start flex-shrink-0">
+                            <ProductCard {...product} />
+                        </div>
                     ))}
                 </div>
 
                 <div className="mt-8 text-center sm:hidden">
-                    <a href="/products" className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium">
+                    <a href="/products" className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium px-6 py-3 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-gray-100 dark:border-slate-700">
                         ดูสินค้าทั้งหมด <span className="ml-2">→</span>
                     </a>
                 </div>
