@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const MotionLink = motion.create(Link);
 import shopImage from '../assets/shop_image.webp';
-import welcomePersonImage from '../assets/ภาพคนยินดีต้อนรับ.webp';
 
 const offers = [
     {
@@ -28,7 +27,7 @@ const offers = [
         textClass: "text-white",
         code: "ปรึกษาเรา",
         link: "/contact",
-        image: welcomePersonImage
+        image: shopImage
     },
     {
         id: 3,
@@ -166,11 +165,11 @@ const PromotionalBanner = () => {
                                         className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100"
                                         loading="lazy"
                                     />
-                                    {/* Tablet Overlay (md to lg) */}
-                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600/90 via-primary-500/50 to-transparent w-[65%]"></div>
+                                    {/* Tablet Overlay (md to lg) - lighter gradient, image mostly visible on right */}
+                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/60 to-transparent" style={{ width: '55%' }}></div>
 
                                     {/* Mobile Overlay (smaller than md) */}
-                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 via-primary-500/50 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 via-primary-500/40 to-transparent"></div>
                                 </>
                             ) : (
                                 <div className="opacity-10 transform flex items-center justify-center w-full h-full">
