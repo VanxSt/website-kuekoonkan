@@ -135,27 +135,50 @@ const PromotionalBanner = () => {
                             </MotionLink>
                         </div>
 
-                        {/* Image/Decorative Elements for Mobile and Desktop */}
-                        <div className="flex items-center justify-center w-full md:w-1/3 h-full absolute inset-0 md:left-auto md:right-0 md:top-0 md:bottom-0 pointer-events-none overflow-hidden z-0">
+                        {/* Desktop Only: Original Layout (lg and above) */}
+                        <div className="hidden lg:flex items-center justify-center w-1/3 h-full absolute right-0 top-0 bottom-0 pointer-events-none overflow-hidden z-0">
+                            {offers[currentIndex].image ? (
+                                <motion.img
+                                    key={`img-desktop-${currentIndex}`}
+                                    src={offers[currentIndex].image}
+                                    alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
+                                    initial={{ opacity: 0, x: 50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                    className="h-full w-full object-cover opacity-50 mask-image-linear-gradient"
+                                    style={{ maskImage: 'linear-gradient(to left, black 60%, transparent 100%)' }}
+                                    loading="lazy"
+                                />
+                            ) : (
+                                <div className="opacity-20 transform rotate-12 translate-x-10 translate-y-10">
+                                    <Tag size={300} aria-hidden="true" />
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Mobile and iPad Only: New Full-Width Blended Layout (hidden on lg) */}
+                        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 lg:hidden flex items-center justify-center">
                             {offers[currentIndex].image ? (
                                 <>
                                     <motion.img
-                                        key={`img-${currentIndex}`}
+                                        key={`img-mobile-${currentIndex}`}
                                         src={offers[currentIndex].image}
                                         alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
-                                        initial={{ opacity: 0, scale: 1.1 }}
-                                        animate={{ opacity: 0.3, scale: 1 }}
+                                        initial={{ opacity: 0, scale: 1.05 }}
+                                        animate={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.8 }}
-                                        className="h-full w-full object-cover md:opacity-50 md:mask-image-linear-gradient"
-                                        style={{ maskImage: 'linear-gradient(to left, black 60%, transparent 100%)' }}
+                                        className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100"
                                         loading="lazy"
                                     />
-                                    {/* Mobile Overlay to ensure text readability */}
-                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 to-primary-400/80Mix bg-blend-multiply"></div>
+                                    {/* Tablet Overlay (md to lg) */}
+                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/80 to-transparent w-full"></div>
+                                    
+                                    {/* Mobile Overlay (smaller than md) */}
+                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/90 via-primary-500/70 to-transparent"></div>
                                 </>
                             ) : (
-                                <div className="opacity-10 transform rotate-12 md:translate-x-10 md:translate-y-10">
-                                    <Tag size={300} aria-hidden="true" />
+                                <div className="opacity-10 transform flex items-center justify-center w-full h-full">
+                                    <Tag size={300} aria-hidden="true" className="rotate-12 translate-x-10 translate-y-10 focus:outline-none" />
                                 </div>
                             )}
                         </div>
