@@ -1,10 +1,9 @@
 import React from 'react';
 import { Phone, Facebook, ShoppingBag, QrCode, ChevronRight } from 'lucide-react';
 import lazadaLogo from '../assets/lazada.webp';
-import shopeeLogo from '../assets/shopee.webp';
-import lineReal from '../assets/LINE_REAL.webp';
 import LineQrPromo from './LineQrPromo';
 import LineIcon from './LineIcon';
+import ShopeeIcon from './ShopeeIcon';
 
 const SocialCard = ({ icon: Icon, title, link, color, bottomText, bottomLabel, bottomIcon: BottomIcon, bottomIconColor }) => (
     <a
@@ -99,10 +98,14 @@ const SocialGrid = () => {
             bottomLabel: 'Shopee',
             bottomText: 'kuekoonkanfoodsupply',
             icon: ({ size }) => (
-                <img src={shopeeLogo} alt="Shopee" className="w-full h-full object-cover" loading="lazy" />
+                <div className="w-full h-full flex items-center justify-center p-6 sm:p-8">
+                    <ShopeeIcon color="white" />
+                </div>
             ),
             bottomIcon: ({ size }) => (
-                <img src={shopeeLogo} alt="Shopee" className="w-[20px] h-[20px] object-contain rounded-md" loading="lazy" />
+                <div className="w-[20px] h-[20px] rounded bg-white flex items-center justify-center p-0.5 shadow-sm">
+                    <ShopeeIcon color="#EE4D2D" />
+                </div>
             ),
             color: 'bg-[#EE4D2D] !p-0',
             bottomIconColor: 'bg-[#EE4D2D]',

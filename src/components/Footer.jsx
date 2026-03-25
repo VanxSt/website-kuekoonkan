@@ -2,9 +2,9 @@ import React from 'react';
 import { Facebook, Clock, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import lazadaLogo from '../assets/lazada.webp';
-import shopeeLogo from '../assets/shopee.webp';
 import lineLogo from '../assets/LINE_REAL.webp';
 import LineIcon from './LineIcon';
+import ShopeeIcon from './ShopeeIcon';
 
 const Footer = () => {
     return (
@@ -48,11 +48,8 @@ const Footer = () => {
                                 <span className="text-sm font-medium">TikTok</span>
                             </a>
                             {/* Shopee */}
-                            <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Shopee">
-                                <div className="bg-white rounded-full group-hover:opacity-90 transition shrink-0 overflow-hidden w-[34px] h-[34px] flex items-center justify-center border border-gray-200">
-                                    <img src={shopeeLogo} alt="Shopee" className="w-full h-full object-cover" loading="lazy" />
-                                </div>
-                                <span className="text-sm font-medium">Shopee</span>
+                            <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="ซื้อสินค้าบน Shopee">
+                                <ShopeeIcon color="white" className="w-12" />
                             </a>
                             {/* Lazada */}
                             <a href="https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Lazada">
