@@ -147,6 +147,7 @@ const PromotionalBanner = () => {
                                     className="h-full w-full object-cover object-center"
                                     style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 35%)' }}
                                     fetchpriority="high" decoding="sync"
+                                    width="800" height="600"
                                 />
                             )}
                         </div>
@@ -164,6 +165,7 @@ const PromotionalBanner = () => {
                                         transition={{ duration: 0.8 }}
                                         className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100"
                                         fetchpriority="high" decoding="sync"
+                                        width="800" height="600"
                                     />
                                     {/* Tablet Overlay (md to lg) - lighter gradient, image mostly visible on right */}
                                     <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/60 to-transparent" style={{ width: '55%' }}></div>
