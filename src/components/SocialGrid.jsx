@@ -3,7 +3,8 @@ import { Phone, Facebook, ShoppingBag, QrCode, ChevronRight } from 'lucide-react
 import lazadaLogo from '../assets/lazada.webp';
 import shopeeLogo from '../assets/shopee.webp';
 import lineReal from '../assets/LINE_REAL.webp';
-
+import LineQrPromo from './LineQrPromo';
+import LineIcon from './LineIcon';
 
 const SocialCard = ({ icon: Icon, title, link, color, bottomText, bottomLabel, bottomIcon: BottomIcon, bottomIconColor }) => (
     <a
@@ -54,13 +55,17 @@ const SocialGrid = () => {
             bottomLabel: 'LINE Official',
             bottomText: '0956427780',
             icon: ({ size }) => (
-                <img src={lineReal} alt="LINE Official" className="w-[400px] h-[400px] object-cover" loading="lazy" />
+                <div className="w-full h-full min-h-[200px] sm:min-h-[280px]">
+                    <LineQrPromo />
+                </div>
             ),
             bottomIcon: ({ size }) => (
-                <img src={lineReal} alt="LINE" className="w-[20px] h-[20px] object-contain rounded-md" loading="lazy" />
+                <div className="w-[20px] h-[20px] rounded bg-white flex items-center justify-center p-0.5 shadow-sm">
+                    <LineIcon size={16} className="text-[#06C755]" textColor="white" />
+                </div>
             ),
             bottomIconColor: 'bg-[#06C755]',
-            color: 'bg-white !p-0',
+            color: 'bg-[#06C755] !p-0',
             link: 'https://lin.ee/A2VWWj87'
         },
         {

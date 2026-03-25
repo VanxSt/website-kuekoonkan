@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import lazadaLogo from '../assets/lazada.webp';
 import shopeeLogo from '../assets/shopee.webp';
 import lineLogo from '../assets/LINE_REAL.webp';
+import LineIcon from './LineIcon';
 
 const Footer = () => {
     return (
@@ -25,12 +26,12 @@ const Footer = () => {
                                 </div>
                                 <span className="text-sm font-medium">โทรศัพท์</span>
                             </a>
-                            {/* Line */}
+                            {/* LINE */}
                             <a href="https://lin.ee/A2VWWj87" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดต่อผ่าน LINE">
                                 <div className="bg-[#06C755] p-2 rounded-full group-hover:opacity-90 transition shrink-0">
-                                    <img src={lineLogo} alt="LINE" className="w-[18px] h-[18px] object-contain" width="18" height="18" loading="lazy" />
+                                    <LineIcon size={18} className="text-white" textColor="#06C755" />
                                 </div>
-                                <span className="text-sm font-medium">Line</span>
+                                <span className="text-sm font-medium">LINE</span>
                             </a>
                             {/* Facebook */}
                             <a href="https://www.facebook.com/kuakoonkan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ติดตามเราบน Facebook">
@@ -79,7 +80,7 @@ const Footer = () => {
                         <h4 className="font-bold text-lg mb-6">ติดต่อสอบถาม</h4>
                         <ul className="space-y-3 text-primary-100/80 text-sm">
                             <li>โทร: 095-642-7780</li>
-                            <li>Line: 0956427780</li>
+                            <li>LINE: 0956427780</li>
                             <li className="break-all">Email: primesukprimesuk@gmail.com</li>
                             <li className="flex items-start gap-2">
                                 <Clock size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
