@@ -76,7 +76,7 @@ const HeroSection = () => {
                         {/* Social Links */}
                         <div className="flex flex-wrap justify-center md:justify-start gap-2">
                             <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Shopee">
-                                <ShopeeIcon color="white" className="w-16" />
+                                <ShopeeIcon size={18} color="white" /> Shopee
                             </a>
                             <a href="https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#0f146d] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="เปิด Lazada">
                                 <ShoppingBag size={16} /> Lazada

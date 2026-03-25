@@ -94,34 +94,30 @@ const SocialGrid = () => {
             link: 'https://www.tiktok.com/@kuekoonkan'
         },
         {
-            title: '',
+            title: 'Shopee',
             bottomLabel: 'Shopee',
             bottomText: 'kuekoonkanfoodsupply',
-            icon: ({ size }) => (
-                <div className="w-full h-full flex items-center justify-center p-6 sm:p-8">
-                    <ShopeeIcon color="white" />
-                </div>
-            ),
+            icon: ShopeeIcon,
             bottomIcon: ({ size }) => (
                 <div className="w-[20px] h-[20px] rounded bg-white flex items-center justify-center p-0.5 shadow-sm">
-                    <ShopeeIcon color="#EE4D2D" />
+                    <ShopeeIcon size={16} color="#EE4D2D" />
                 </div>
             ),
-            color: 'bg-[#EE4D2D] !p-0',
+            color: 'bg-[#EE4D2D]',
             bottomIconColor: 'bg-[#EE4D2D]',
             link: 'https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296'
         },
         {
-            title: '',
+            title: 'Lazada',
             bottomLabel: 'Lazada',
             bottomText: 'kuekoonkan',
-            icon: ({ size }) => (
-                <img src={lazadaLogo} alt="Lazada" className="w-full h-full object-cover" loading="lazy" />
-            ),
+            icon: ShoppingBag,
             bottomIcon: ({ size }) => (
-                <img src={lazadaLogo} alt="Lazada" className="w-[20px] h-[20px] object-contain rounded-md" loading="lazy" />
+                <div className="w-[20px] h-[20px] rounded bg-white flex items-center justify-center p-0.5 shadow-sm">
+                    <ShoppingBag size={16} className="text-[#0f146d]" />
+                </div>
             ),
-            color: 'bg-[#0f146d] !p-0',
+            color: 'bg-[#0f146d]',
             bottomIconColor: 'bg-white',
             link: 'https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp'
         }

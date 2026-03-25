@@ -49,7 +49,7 @@ const Footer = () => {
                             </a>
                             {/* Shopee */}
                             <a href="https://shopee.co.th/kuekoonkanfoodsupply?categoryId=100629&entryPoint=ShopByPDP&itemId=28192611296" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#EE4D2D] text-white px-6 py-2 rounded-full hover:opacity-90 transition font-bold text-sm shadow-md" aria-label="ซื้อสินค้าบน Shopee">
-                                <ShopeeIcon color="white" className="w-12" />
+                                <ShopeeIcon size={18} color="white" /> Shopee
                             </a>
                             {/* Lazada */}
                             <a href="https://www.lazada.co.th/shop/kuekoonkan/?itemId=4471226738&channelSource=pdp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-200 hover:text-white transition group" aria-label="ซื้อสินค้าบน Lazada">
