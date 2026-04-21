@@ -1,7 +1,7 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
-import shopeeLogo from '../assets/shopee.webp';
-import lazadaLogo from '../assets/lazada.webp';
+import shopeeLogo from '../assets/shopee-logo.webp';
+import lazadaLogo from '../assets/lazada-logo.webp';
 
 const ReviewCard = ({ name, role, content, rating, avatar }) => (
     <article className="bg-primary-50 dark:bg-slate-800 p-6 sm:p-8 rounded-2xl relative transition-colors duration-300">

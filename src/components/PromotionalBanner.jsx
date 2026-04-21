@@ -4,7 +4,7 @@ import { Tag, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MotionLink = motion.create(Link);
-import shopImage from '../assets/shop_image.webp';
+import shopImage from '../assets/kuekoonkan-shop-front.webp';
 
 const offers = [
     {

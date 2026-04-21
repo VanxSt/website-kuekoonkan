@@ -1,8 +1,8 @@
 import React from 'react';
 import { Facebook, Clock, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import lazadaLogo from '../assets/lazada.webp';
-import lineLogo from '../assets/LINE_REAL.webp';
+import lazadaLogo from '../assets/lazada-logo.webp';
+import lineLogo from '../assets/kuekoonkan-line-qr-code.webp';
 import LineIcon from './LineIcon';
 import ShopeeIcon from './ShopeeIcon';
 

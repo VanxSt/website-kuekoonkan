@@ -1,9 +1,9 @@
 import React from 'react';
 import { Truck, Clock, BadgeCheck, ShoppingCart, ShoppingBag, Facebook, Package } from 'lucide-react';
 import { motion } from 'framer-motion';
-import bannerDecor from '../assets/รูปแต่ง banner.webp';
-import shopImage from '../assets/shop_image.webp';
-import welcomeImage from '../assets/ภาพคนยินดีต้อนรับ.webp';
+import bannerDecor from '../assets/kuekoonkan-banner-decoration.webp';
+import shopImage from '../assets/kuekoonkan-shop-front.webp';
+import welcomeImage from '../assets/kuekoonkan-welcome-staff.webp';
 import ShopeeIcon from './ShopeeIcon';
 
 const HeroSection = () => {

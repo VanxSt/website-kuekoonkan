@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Facebook, ShoppingBag, QrCode, ChevronRight } from 'lucide-react';
-import lazadaLogo from '../assets/lazada.webp';
+import lazadaLogo from '../assets/lazada-logo.webp';
 import LineQrPromo from './LineQrPromo';
 import LineIcon from './LineIcon';
 import ShopeeIcon from './ShopeeIcon';

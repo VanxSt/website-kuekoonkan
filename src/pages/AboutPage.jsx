@@ -2,8 +2,8 @@ import React from 'react';
 import { Users, Heart, Truck, ThumbsUp, ShoppingCart, Package, Clock, Award, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import shopImage from '../assets/shop_image.webp';
-import welcomeImage from '../assets/ภาพคนยินดีต้อนรับ.webp';
+import shopImage from '../assets/kuekoonkan-shop-front.webp';
+import welcomeImage from '../assets/kuekoonkan-welcome-staff.webp';
 
 const AboutPage = () => {
     const stats = [
@@ -84,13 +84,13 @@ const AboutPage = () => {
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">เรื่องราวของเรา</h2>
                             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                                 <p className="text-lg">
-                                    จากรถเข็นขายข้าวแกงเล็ก ๆ สู่ห้องแถวของร้าน <span className="font-semibold text-primary-600">“จิราภัณฑ์”</span> ที่ได้ยืนอยู่เคียงข้างชาวชุมชนการเคหะและพื้นที่ใกล้เคียง 
-                                    จุดเริ่มต้นของเรามาจาก <span className="font-semibold text-primary-600">“คุณยายกิมเลี้ยง”</span> คนที่เคยเป็นแม่ค้าข้าวแกงมาก่อน จึงเข้าใจหัวใจของคนทำมาหากินเป็นอย่างดี 
+                                    จากรถเข็นขายข้าวแกงเล็ก ๆ สู่ห้องแถวของร้าน <span className="font-semibold text-primary-600">“จิราภัณฑ์”</span> ที่ได้ยืนอยู่เคียงข้างชาวชุมชนการเคหะและพื้นที่ใกล้เคียง
+                                    จุดเริ่มต้นของเรามาจาก <span className="font-semibold text-primary-600">“คุณยายกิมเลี้ยง”</span> คนที่เคยเป็นแม่ค้าข้าวแกงมาก่อน จึงเข้าใจหัวใจของคนทำมาหากินเป็นอย่างดี
                                     เราจึงค่อย ๆ เติมสินค้า ตั้งแต่ข้าวสาร อาหารแห้ง ไปจนถึงอุปกรณ์ทำมาหากิน เพื่อให้ร้านของเรา เป็นมากกว่าที่ซื้อของ แต่เป็น <span className="font-semibold text-primary-600">“ที่พึ่งของคนหาเช้ากินค่ำ”</span>
                                 </p>
                                 <p className="text-lg">
-                                    วันนี้…เราไม่ได้แค่เติบโตในขนาดของร้าน แต่เราเติบโตใน <span className="font-semibold text-primary-600">“ความเข้าใจ”</span> และ <span className="font-semibold text-primary-600">“ความตั้งใจ”</span> เราได้เห็นลูกค้าหลายคน 
-                                    เริ่มต้นจากศูนย์ จนมีร้าน มีอาชีพ มีรายได้ที่มั่นคง และนั่นทำให้เราเชื่อมั่นมากขึ้นว่า การเติบโตที่ยั่งยืน คือการเติบโตแบบ <span className="font-bold text-primary-600">“เกื้อกูลกัน”</span> ทั้งลูกค้า คู่ค้า 
+                                    วันนี้…เราไม่ได้แค่เติบโตในขนาดของร้าน แต่เราเติบโตใน <span className="font-semibold text-primary-600">“ความเข้าใจ”</span> และ <span className="font-semibold text-primary-600">“ความตั้งใจ”</span> เราได้เห็นลูกค้าหลายคน
+                                    เริ่มต้นจากศูนย์ จนมีร้าน มีอาชีพ มีรายได้ที่มั่นคง และนั่นทำให้เราเชื่อมั่นมากขึ้นว่า การเติบโตที่ยั่งยืน คือการเติบโตแบบ <span className="font-bold text-primary-600">“เกื้อกูลกัน”</span> ทั้งลูกค้า คู่ค้า
                                     พนักงาน และชุมชน นั่นคือเหตุผลที่เราตัดสินใจก้าวสู่บทใหม่ ภายใต้ชื่อ <span className="font-bold text-primary-600 dark:text-primary-400">“เกื้อกูลกัน”</span>
                                 </p>
                                 <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm my-6 border-l-4 border-primary-500">

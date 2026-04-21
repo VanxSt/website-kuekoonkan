@@ -1,13 +1,13 @@
 import React from 'react';
 import { ShoppingCart, Star, Filter, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import product1 from '../assets/รวมรูปสินค้า/รวมกล่อง PG 1.webp';
-import product2 from '../assets/รวมรูปสินค้า/รวมน้มข้นหวาน 2.webp';
-import product3 from '../assets/รวมรูปสินค้า/รวมสินค้าถั่ว 3.webp';
-import product4 from '../assets/รวมรูปสินค้า/รวมอี้เหวินผงชานม 4.webp';
-import product5 from '../assets/รวมรูปสินค้า/รวมน้ำหวาน 5.webp';
-import product6 from '../assets/รวมรูปสินค้า/รวมมายองเนส 6.webp';
-import shopImage from '../assets/shop_image.webp';
+import product1 from '../assets/รวมรูปสินค้า/kuekoonkan-pg-box-products.webp';
+import product2 from '../assets/รวมรูปสินค้า/kuekoonkan-condensed-milk-products.webp';
+import product3 from '../assets/รวมรูปสินค้า/kuekoonkan-nut-products.webp';
+import product4 from '../assets/รวมรูปสินค้า/kuekoonkan-milk-tea-powder-products.webp';
+import product5 from '../assets/รวมรูปสินค้า/kuekoonkan-sweet-syrup-products.webp';
+import product6 from '../assets/รวมรูปสินค้า/kuekoonkan-mayonnaise-products.webp';
+import shopImage from '../assets/kuekoonkan-shop-front.webp';
 
 const ProductCard = ({ name, price, rating, image, isNew, link, category }) => (
     <article className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 dark:border-slate-700 overflow-hidden group">

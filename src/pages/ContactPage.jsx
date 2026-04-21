@@ -1,10 +1,10 @@
 import React from 'react';
 import { Phone, Facebook, Clock, MapPin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import lazadaLogo from '../assets/lazada.webp';
-import shopeeLogo from '../assets/shopee.webp';
-import lineReal from '../assets/LINE_REAL.webp';
-import mapImage from '../assets/map.webp';
+import lazadaLogo from '../assets/lazada-logo.webp';
+import shopeeLogo from '../assets/shopee-logo.webp';
+import lineReal from '../assets/kuekoonkan-line-qr-code.webp';
+import mapImage from '../assets/kuekoonkan-map-location.webp';
 
 const ContactPage = () => {
     const contactMethods = [

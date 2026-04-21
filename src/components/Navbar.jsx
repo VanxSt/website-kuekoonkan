@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, Search } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.webp';
+import logo from '../assets/kuekoonkan-logo.webp';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import mapImage from '../assets/map.webp';
+import mapImage from '../assets/kuekoonkan-map-location.webp';
 
 const MapSection = () => {
     return (
