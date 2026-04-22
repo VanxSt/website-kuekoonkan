@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import ScrollToTop from './components/ScrollToTop';
+import ChatWidget from './components/ChatWidget';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ProductsPage = lazy(() => import('./pages/ProductsPage'));
@@ -39,6 +40,7 @@ function App() {
         </main>
         <Footer />
         <CookieConsent />
+        <ChatWidget />
       </div>
     </Router>
   );
