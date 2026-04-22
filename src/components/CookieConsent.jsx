@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 
-const CookieConsent = () => {
+const CookieConsent = ({ onAccept }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -14,6 +14,7 @@ const CookieConsent = () => {
     const handleAccept = () => {
         setIsVisible(false);
         localStorage.setItem('cookieConsent', 'true');
+        if (onAccept) onAccept();
     };
 
     if (!isVisible) return null;

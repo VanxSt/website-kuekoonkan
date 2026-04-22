@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { MessageCircle, X, Phone, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ChatWidget = () => {
+const ChatWidget = ({ isCookieVisible }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const contactLinks = [
         {
             name: 'Line Official',
             icon: MessageSquare,
-            url: 'https://line.me/R/ti/p/@kuakoonkan', // เปลี่ยนเป็น Link Line จริง
+            url: 'https://lin.ee/A2VWWj87',
             color: 'bg-[#06C755]'
         },
         {
@@ -27,7 +27,7 @@ const ChatWidget = () => {
     ];
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+        <div className={`fixed right-6 z-50 flex flex-col items-end gap-4 transition-all duration-500 ${isCookieVisible ? 'bottom-32 md:bottom-28' : 'bottom-6'}`}>
             {/* Contact Menu */}
             <AnimatePresence>
                 {isOpen && (

@@ -12,6 +12,8 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 function App() {
+  const [showCookie, setShowCookie] = useState(false);
+
   useEffect(() => {
     // Ensure accurate initial theme rendering before flash
     const savedTheme = localStorage.getItem('theme');
@@ -20,6 +22,12 @@ function App() {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
+    }
+
+    // Check cookie consent
+    const accepted = localStorage.getItem('cookieConsent');
+    if (!accepted) {
+      setShowCookie(true);
     }
   }, []);
 
@@ -39,8 +47,8 @@ function App() {
           </Suspense>
         </main>
         <Footer />
-        <CookieConsent />
-        <ChatWidget />
+        <CookieConsent onAccept={() => setShowCookie(false)} />
+        <ChatWidget isCookieVisible={showCookie} />
       </div>
     </Router>
   );
