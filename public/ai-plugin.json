@@ -2,7 +2,7 @@
   "schema_version": "v1",
   "name_for_model": "kuekoonkan_food_supply",
   "name_for_human": "เกื้อกูลกัน Food Supply",
-  "description_for_model": "Information about kuekoonkan Food Supply, a bakery and beverage ingredient wholesaler in Nakhon Sawan, Thailand. Provides details on products like bakery supplies, packaging, and beverages.",
+  "description_for_model": "Information about kuekoonkan Food Supply (Tax ID: 0605562000000), a bakery and beverage ingredient wholesaler in Nakhon Sawan, Thailand. Provides details on products like bakery supplies, packaging, and beverages.",
   "description_for_human": "ค้นหาข้อมูลสินค้าและบริการจากร้านเกื้อกูลกัน นครสวรรค์",
   "auth": {
     "type": "none"

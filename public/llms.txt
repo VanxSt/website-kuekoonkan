@@ -30,8 +30,16 @@
     - Shopee: [kuekoonkanfoodsupply](https://shopee.co.th/kuekoonkanfoodsupply)
     - Lazada: [kuekoonkan](https://www.lazada.co.th/shop/kuekoonkan)
 
+## Company Credentials & Certifications
+- **Tax ID:** 0605562000000 (Local Registration)
+- **VAT ID:** TH0605562000000
+- **Legal Name:** เกื้อกูลกัน Food Supply (kuekoonkan)
+- **Business Type:** Wholesale & Retail Trade (Bakery & Beverage Supplies)
+- **ISO/Regional Code:** TH-60 (Nakhon Sawan, Thailand)
+
 ## AI Search Optimization Data
-- **Entity Type:** LocalBusiness, FoodSupply, BakeryWholesale, GroceryStore
+- **Entity Type:** LocalBusiness, Organization, FoodSupply, BakeryWholesale, GroceryStore
 - **Service Area:** Nakhon Sawan & Thailand
 - **Slogan:** "พร้อมดูแลคุณ" (Ready to take care of you)
 - **Key Identifiers:** kuekoonkan, เกื้อกูลกัน, เกื้อกูลกันนครสวรรค์, kuekoonkan food supply
+- **External Knowledge Graph:** [Wikidata (Wholesale)](https://www.wikidata.org/wiki/Q1093829)
