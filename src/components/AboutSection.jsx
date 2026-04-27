@@ -109,7 +109,7 @@ const AboutSection = () => {
                                 <Heart size={20} fill="currentColor" />
                             </div>
                             <div className="flex-1 min-w-0">
-                                <h4 className="font-bold text-gray-900 dark:text-white text-sm truncate">เกื้อกูลกัน</h4>
+                                <p className="font-bold text-gray-900 dark:text-white text-sm truncate">เกื้อกูลกัน</p>
                                 <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 truncate">พร้อมดูแลทุกความต้องการ</p>
                             </div>
                         </motion.div>

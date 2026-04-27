@@ -30,7 +30,7 @@ const ReviewCard = ({ name, role, content, rating, avatar }) => (
                 </div>
             )}
             <div className="ml-4">
-                <h4 className="font-bold text-gray-900 dark:text-white">{name}</h4>
+                <p className="font-bold text-gray-900 dark:text-white">{name}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">{role}</p>
             </div>
         </div>

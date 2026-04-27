@@ -75,8 +75,9 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" />
   </noscript>
 
-  <!-- Removed manual image preloads to prevent Vite dev warnings, relying on fetchPriority on image tags instead -->
-
+  <!-- Preload Hero Images for LCP Optimization (PageSpeed fix) -->
+  <link rel="preload" as="image" href="/src/assets/kuekoonkan-shop-front.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/src/assets/kuekoonkan-banner-decoration.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high" />
   <!-- Structured Data: LocalBusiness & Organization -->
   <script type="application/ld+json">
   {

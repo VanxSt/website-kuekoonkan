@@ -63,7 +63,7 @@ const Footer = () => {
 
                     {/* Column 2: Links */}
                     <nav aria-label="ลิงก์ภายในเว็บไซต์">
-                        <h4 className="font-bold text-lg mb-6">หน้าหลัก</h4>
+                        <p className="font-bold text-lg mb-6">หน้าหลัก</p>
                         <ul className="space-y-3 text-primary-100/80 text-sm">
                             <li><Link to="/" className="hover:text-white transition">หน้าแรก</Link></li>
                             <li><Link to="/products" className="hover:text-white transition">สินค้าแนะนำ</Link></li>
@@ -74,7 +74,7 @@ const Footer = () => {
 
                     {/* Column 3: Contact */}
                     <div>
-                        <h4 className="font-bold text-lg mb-6">ติดต่อสอบถาม</h4>
+                        <p className="font-bold text-lg mb-6">ติดต่อสอบถาม</p>
                         <ul className="space-y-3 text-primary-100/80 text-sm">
                             <li>โทร: 095-642-7780</li>
                             <li>LINE: 0956427780</li>
@@ -88,7 +88,7 @@ const Footer = () => {
 
                     {/* Column 4: Address */}
                     <address className="not-italic">
-                        <h4 className="font-bold text-lg mb-6">ที่อยู่ร้าน</h4>
+                        <p className="font-bold text-lg mb-6">ที่อยู่ร้าน</p>
                         <p className="text-primary-100/80 text-sm leading-relaxed">
                             26/16-19 หมู่ 10 ต.วัดไทรย์ , Nakhon Sawan <br />
                             Thailand, 60000

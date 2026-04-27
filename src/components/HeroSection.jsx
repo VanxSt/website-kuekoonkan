@@ -143,7 +143,7 @@ const HeroSection = () => {
                                     <Package className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าแพ็คดี</h4>
+                                    <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าแพ็คดี</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">ใส่ใจทุกกล่อง</p>
                                 </div>
                             </motion.div>
@@ -158,7 +158,7 @@ const HeroSection = () => {
                                     <BadgeCheck className="w-4 h-4 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าคุณภาพ</h4>
+                                    <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าคุณภาพ</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">การันตี 100%</p>
                                 </div>
                             </motion.div>
@@ -173,7 +173,7 @@ const HeroSection = () => {
                                     <Truck className="w-4 h-4 sm:w-6 sm:h-6" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">จัดส่งไว</h4>
+                                    <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">จัดส่งไว</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">ถึงมือทันใจ</p>
                                 </div>
                             </motion.div>

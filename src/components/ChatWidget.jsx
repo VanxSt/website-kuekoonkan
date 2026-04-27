@@ -37,12 +37,12 @@ const ChatWidget = ({ isCookieVisible }) => {
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-slate-700 p-4 w-64 mb-2"
                     >
-                        <h4 className="font-bold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
+                        <p className="font-bold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
                             เลือกช่องทางติดต่อ
                             <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white">
                                 <X size={20} />
                             </button>
-                        </h4>
+                        </p>
                         <div className="space-y-3">
                             {contactLinks.map((link, i) => (
                                 <a
