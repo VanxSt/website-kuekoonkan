@@ -9,8 +9,8 @@ import shopImage from '../assets/kuekoonkan-shop-front.webp';
 const offers = [
     {
         id: 1,
-        title: "ร้านเกื้อกูลกัน",
-        subtitle: <>ร้านเกื้อกูลกัน เพื่อนคู่คิด<br className="hidden md:block lg:hidden" /> ธุรกิจคุณ</>,
+        title: "เกื้อกูลกัน",
+        subtitle: <>เกื้อกูลกัน เพื่อนคู่คิด<br className="hidden md:block lg:hidden" /> ธุรกิจคุณ</>,
         description: "ศูนย์รวมวัตถุดิบผู้ประกอบการ ร้านอาหาร คาเฟ่ โรงแรม และโรงงาน คัดสรรวัตถุดิบมาตราฐานส่งตรงถึงร้านคุณ",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -20,8 +20,8 @@ const offers = [
     },
     {
         id: 2,
-        title: "ร้านเกื้อกูลกัน",
-        subtitle: "ร้านเกื้อกูลกัน บริการประทับใจ\nใส่ใจทุกรายละเอียด",
+        title: "เกื้อกูลกัน",
+        subtitle: "เกื้อกูลกัน บริการประทับใจ\nใส่ใจทุกรายละเอียด",
         description: "พร้อมให้คำปรึกษาเรื่องการจัดซื้อวัตถุดิบ พร้อมสนับสนุนทุกความสำเร็จ ให้โตไปด้วยกัน",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -31,8 +31,8 @@ const offers = [
     },
     {
         id: 3,
-        title: "ร้านเกื้อกูลกัน",
-        subtitle: "ร้านเกื้อกูลกัน ครบ จบ ในที่เดียว",
+        title: "เกื้อกูลกัน",
+        subtitle: "เกื้อกูลกัน ครบ จบ ในที่เดียว",
         description: "สินค้าครบมากกว่า 5,000 รายการ จัดส่งฟรี ทั่วประเทศ \nศูนย์รวมวัตถุดิบอาหาร เบเกอรี่ และบรรจุภัณฑ์",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -140,7 +140,7 @@ const PromotionalBanner = () => {
                                 <motion.img
                                     key={`img-desktop-${currentIndex}`}
                                     src={offers[currentIndex].image}
-                                    alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
+                                    alt={`${offers[currentIndex].subtitle} - เกื้อกูลกัน`}
                                     initial={{ opacity: 0, x: 30 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6 }}
@@ -159,7 +159,7 @@ const PromotionalBanner = () => {
                                     <motion.img
                                         key={`img-mobile-${currentIndex}`}
                                         src={offers[currentIndex].image}
-                                        alt={`${offers[currentIndex].subtitle} - ร้านเกื้อกูลกัน`}
+                                        alt={`${offers[currentIndex].subtitle} - เกื้อกูลกัน`}
                                         initial={{ opacity: 0, scale: 1.05 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.8 }}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const AboutSection = () => {
     return (
-        <section id="about" className="py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300" aria-label="เกี่ยวกับร้านเกื้อกูลกัน">
+        <section id="about" className="py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300" aria-label="เกี่ยวกับเกื้อกูลกัน">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -19,17 +19,17 @@ const AboutSection = () => {
                             เกี่ยวกับเรา
                         </div>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
-                            ร้านเกื้อกูลกัน <br />
+                            เกื้อกูลกัน <br />
                             <span className="text-primary-500">พร้อมดูแลคุณ</span>
                         </h2>
                         <p className="text-gray-600 dark:text-gray-300 text-lg mb-6 leading-relaxed">
-                            ร้านเกื้อกูลกันเป็นร้านขายของชำและของใช้ในครัวเรือนที่ให้บริการมากกว่า 5 ปี
+                            เกื้อกูลกันเป็นร้านขายของชำและของใช้ในครัวเรือนที่ให้บริการมากกว่า 5 ปี
                             เรามุ่งมั่นในการคัดสรรสินค้าคุณภาพดีในราคาย่อมเยา พร้อมบริการจัดส่งที่รวดเร็ว
                             และดูแลลูกค้าทุกท่านอย่างจริงใจ
                         </p>
                         <p className="text-gray-600 dark:text-gray-300 text-lg mb-10 leading-relaxed">
                             เราพร้อมให้บริการทั้งลูกค้าทั่วไปและร้านค้า ไม่ว่าจะซื้อปลีกหรือส่ง
-                            ร้านเกื้อกูลกันพร้อมดูแลคุณเสมอ
+                            เกื้อกูลกันพร้อมดูแลคุณเสมอ
                         </p>
 
                         {/* Stats Grid */}
