@@ -1,4 +1,44 @@
+# ==========================================
+# kuekoonkan.com Robots.txt
+# Optimized for SEO and AI Search Engines (AIO)
+# ==========================================
+
+# 1. Allow all standard search engines (Google, Bing, Yahoo)
 User-agent: *
 Allow: /
 
+# 2. Explicitly Allow AI Web Crawlers (ChatGPT, Perplexity, Claude, Gemini)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# 3. Prevent crawling of internal or sensitive paths (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# 4. Sitemaps and AI Documentation
 Sitemap: https://kuekoonkan.com/sitemap.xml
+# AI Documentation: https://kuekoonkan.com/llms.txt
