@@ -2,13 +2,15 @@
 <html lang="th">
 
 <head>
-  <!-- Google Tag Manager (Lazy Loaded for PageSpeed) -->
+  <!-- Google Analytics & Tag Manager (Lazy Loaded for PageSpeed FCP/LCP) -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      var gtmLoaded = false;
-      function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
+      var analyticsLoaded = false;
+      function loadAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+        
+        // 1. Load Google Tag Manager
         (function (w, d, s, l, i) {
           w[l] = w[l] || []; w[l].push({
             'gtm.start':
@@ -17,16 +19,28 @@
             j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PLKN98C5');
+
+        // 2. Load gtag.js (Google Analytics 4)
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-NVTYQBX8DJ';
+        document.head.appendChild(gtagScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag; // Make gtag globally available
+        gtag('js', new Date());
+        gtag('config', 'G-NVTYQBX8DJ');
       }
-      // Load GTM on user interaction to score 100 on PageSpeed
-      window.addEventListener('scroll', loadGTM, { once: true, passive: true });
-      window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
-      window.addEventListener('mousemove', loadGTM, { once: true, passive: true });
-      // Fallback: load after 3.5 seconds if no interaction
-      setTimeout(loadGTM, 3500);
+
+      // Load Analytics on user interaction or after delay
+      window.addEventListener('scroll', loadAnalytics, { once: true, passive: true });
+      window.addEventListener('touchstart', loadAnalytics, { once: true, passive: true });
+      window.addEventListener('mousemove', loadAnalytics, { once: true, passive: true });
+      setTimeout(loadAnalytics, 3500);
     });
   </script>
-  <!-- End Google Tag Manager -->
+  <!-- End Google Analytics & Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -419,15 +433,7 @@
     ]
   }
   </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVTYQBX8DJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-NVTYQBX8DJ');
-  </script>
 </head>
 
 <body>
@@ -435,7 +441,26 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLKN98C5" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <div id="root"></div>
+  <div id="root">
+    <style>
+      .initial-loader {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        background-color: #f8fafc; font-family: 'Kanit', sans-serif; z-index: 9999;
+      }
+      .spinner {
+        width: 50px; height: 50px; border: 4px solid #e0f2fe; border-top: 4px solid #0ea5e9;
+        border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
+      }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      .loading-text { color: #0ea5e9; font-size: 1.25rem; font-weight: 600; animation: pulse 2s infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    </style>
+    <div class="initial-loader">
+      <div class="spinner"></div>
+      <div class="loading-text">เกื้อกูลกัน Food Supply</div>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
