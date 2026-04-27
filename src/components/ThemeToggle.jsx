@@ -8,7 +8,7 @@ const ThemeToggle = () => {
         // Check local storage or system preference on mount
         const savedTheme = localStorage.getItem('theme');
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        
+
         if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
             setIsDark(true);
             document.documentElement.classList.add('dark');

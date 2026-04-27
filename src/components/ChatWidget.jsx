@@ -74,7 +74,7 @@ const ChatWidget = ({ isCookieVisible }) => {
                 <div className="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg opacity-0 group-hover:opacity-100 md:opacity-100 transition-opacity duration-300">
                     สอบถาม/ปรึกษาฟรี
                 </div>
-                
+
                 {/* Icon Button */}
                 <div className={`w-14 h-14 rounded-full shadow-xl flex items-center justify-center text-white transition-all duration-300 transform group-hover:scale-110 ${isOpen ? 'bg-red-500' : 'bg-primary-600'}`}>
                     {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
