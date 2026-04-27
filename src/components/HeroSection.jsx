@@ -110,9 +110,9 @@ const HeroSection = () => {
                             {/* Main Banner Image (Desktop Only) */}
                             <img
                                 src={bannerDecor}
-                                alt="ภาพรวมสินค้าร้านเกื้อกูลกัน วัตถุดิบเบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์"
+                                alt="ภาพรวมสินค้าเกื้อกูลกัน วัตถุดิบเบเกอรี่ เครื่องดื่ม และบรรจุภัณฑ์"
                                 className="hidden md:block w-full max-w-[150%] lg:max-w-6xl object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-[50px]"
-                                fetchpriority="high" decoding="sync"
+                                fetchPriority="high" decoding="sync"
                                 width="1200" height="800"
                             />
 
@@ -120,16 +120,16 @@ const HeroSection = () => {
                             <div className="w-full flex md:hidden relative h-full justify-center">
                                 <img
                                     src={shopImage}
-                                    alt="หน้าร้านเกื้อกูลกัน Food Supply"
+                                    alt="เกื้อกูลกัน Food Supply"
                                     className="absolute w-[85%] h-[75%] object-cover rounded-[30px] shadow-2xl z-10 top-4 -left-2 border-4 border-white dark:border-slate-800"
-                                    fetchpriority="high" decoding="sync"
+                                    fetchPriority="high" decoding="sync"
                                     width="400" height="400"
                                 />
                                 <img
                                     src={welcomeImage}
-                                    alt="พนักงานร้านเกื้อกูลกันยินดีต้อนรับ"
+                                    alt="พนักงานเกื้อกูลกันยินดีต้อนรับ"
                                     className="absolute w-[65%] h-[55%] object-cover rounded-[20px] shadow-xl z-20 bottom-4 -right-2 border-4 border-white dark:border-slate-700"
-                                    fetchpriority="high" decoding="sync"
+                                    fetchPriority="high" decoding="sync"
                                     width="300" height="300"
                                 />
                             </div>

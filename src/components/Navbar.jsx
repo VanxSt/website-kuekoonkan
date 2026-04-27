@@ -47,7 +47,7 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0 flex items-center gap-3" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                        <img src={logo} alt="โลโก้เกื้อกูลกัน Food Supply" className="h-16 w-auto object-contain" width="64" height="64" fetchpriority="high" decoding="sync" />
+                        <img src={logo} alt="โลโก้เกื้อกูลกัน Food Supply" className="h-16 w-auto object-contain" width="64" height="64" fetchPriority="high" decoding="sync" />
                         <div className="flex items-baseline gap-2">
                             <span className="font-bold text-xl text-primary-500 leading-none">เกื้อกูลกัน</span>
                             <span className="text-xs text-primary-500 font-medium">Food Supply</span>

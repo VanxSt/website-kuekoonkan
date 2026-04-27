@@ -11,6 +11,7 @@ const offers = [
         id: 1,
         title: "เกื้อกูลกัน",
         subtitle: <>เกื้อกูลกัน เพื่อนคู่คิด<br /> ธุรกิจคุณ</>,
+        altText: "เกื้อกูลกัน เพื่อนคู่คิด ธุรกิจคุณ",
         description: "ศูนย์รวมวัตถุดิบผู้ประกอบการ ร้านอาหาร คาเฟ่ โรงแรม และโรงงาน คัดสรรวัตถุดิบมาตราฐานส่งตรงถึงร้านคุณ",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -22,6 +23,7 @@ const offers = [
         id: 2,
         title: "เกื้อกูลกัน",
         subtitle: "เกื้อกูลกัน บริการประทับใจ\nใส่ใจทุกรายละเอียด",
+        altText: "เกื้อกูลกัน บริการประทับใจ ใส่ใจทุกรายละเอียด",
         description: "พร้อมให้คำปรึกษาเรื่องการจัดซื้อวัตถุดิบ พร้อมสนับสนุนทุกความสำเร็จ ให้โตไปด้วยกัน",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -33,6 +35,7 @@ const offers = [
         id: 3,
         title: "เกื้อกูลกัน",
         subtitle: "เกื้อกูลกัน ครบ จบ ในที่เดียว",
+        altText: "เกื้อกูลกัน ครบ จบ ในที่เดียว",
         description: "สินค้าครบมากกว่า 5,000 รายการ จัดส่งฟรี ทั่วประเทศ \nศูนย์รวมวัตถุดิบอาหาร เบเกอรี่ และบรรจุภัณฑ์",
         bgClass: "bg-gradient-to-r from-primary-400 to-primary-600",
         textClass: "text-white",
@@ -140,13 +143,13 @@ const PromotionalBanner = () => {
                                 <motion.img
                                     key={`img-desktop-${currentIndex}`}
                                     src={offers[currentIndex].image}
-                                    alt={`${offers[currentIndex].subtitle} - เกื้อกูลกัน`}
+                                    alt={`${offers[currentIndex].altText} - เกื้อกูลกัน`}
                                     initial={{ opacity: 0, x: 30 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.6 }}
                                     className="h-full w-full object-cover object-center"
                                     style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 35%)' }}
-                                    fetchpriority="high" decoding="sync"
+                                    fetchPriority="high" decoding="sync"
                                     width="800" height="600"
                                 />
                             )}
@@ -159,12 +162,12 @@ const PromotionalBanner = () => {
                                     <motion.img
                                         key={`img-mobile-${currentIndex}`}
                                         src={offers[currentIndex].image}
-                                        alt={`${offers[currentIndex].subtitle} - เกื้อกูลกัน`}
+                                        alt={`${offers[currentIndex].altText} - เกื้อกูลกัน`}
                                         initial={{ opacity: 0, scale: 1.05 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.8 }}
                                         className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100"
-                                        fetchpriority="high" decoding="sync"
+                                        fetchPriority="high" decoding="sync"
                                         width="800" height="600"
                                     />
                                     {/* Tablet Overlay (md to lg) - lighter gradient, image mostly visible on right */}
@@ -190,12 +193,13 @@ const PromotionalBanner = () => {
                     <button
                         key={index}
                         onClick={() => setCurrentIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/80'
-                            }`}
+                        className="w-12 h-12 flex items-center justify-center focus:outline-none group"
                         role="tab"
                         aria-selected={index === currentIndex}
                         aria-label={`สไลด์ ${index + 1}`}
-                    />
+                    >
+                        <span className={`block h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white w-8' : 'bg-white/50 group-hover:bg-white/80 w-3'}`} />
+                    </button>
                 ))}
             </div>
         </section >
