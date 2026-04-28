@@ -1,33 +1,18 @@
 import React from 'react';
 import { Truck, Clock, BadgeCheck, ShoppingCart, ShoppingBag, Facebook, Package } from 'lucide-react';
-import { motion } from 'framer-motion';
 import bannerDecor from '../assets/kuekoonkan-banner-decoration.webp';
 import shopImage from '../assets/kuekoonkan-shop-front.webp';
 import welcomeImage from '../assets/kuekoonkan-welcome-staff.webp';
 import ShopeeIcon from './ShopeeIcon';
 
 const HeroSection = () => {
-    const floatingAnimation = {
-        y: [0, -15, 0],
-        transition: {
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut"
-        }
-    };
-
     return (
         <section className="relative pt-16 pb-10 overflow-hidden bg-gradient-to-b from-primary-50 to-white dark:from-slate-900 dark:to-slate-800 transition-colors duration-300" aria-label="ส่วนต้อนรับ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 
                     {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-center md:text-left z-20"
-                    >
+                    <div className="text-center md:text-left z-20 hero-fade-in-left">
                         <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-primary-50/80 dark:bg-slate-800/80 backdrop-blur-sm border border-primary-100 dark:border-slate-700 mb-6">
                             <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
                             <span className="text-primary-700 dark:text-primary-400 font-medium text-sm">ยินดีต้อนรับสู่ร้านเกื้อกูลกัน</span>
@@ -93,20 +78,15 @@ const HeroSection = () => {
                                 LINE
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Image Content - Staggered Waterfall Grid */}
-                    <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] w-full flex items-center justify-center perspective-1000 mt-8 md:mt-0">
+                    <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] w-full flex items-center justify-center mt-8 md:mt-0">
                         {/* Background Decor */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-blue-50/50 dark:bg-primary-900/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
                         {/* Staggered Grid Container */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            className="relative z-10 w-full flex justify-center items-center h-full md:h-auto"
-                        >
+                        <div className="relative z-10 w-full flex justify-center items-center h-full md:h-auto hero-fade-in">
                             {/* Main Banner Image (Desktop Only) */}
                             <img
                                 src={bannerDecor}
@@ -129,16 +109,13 @@ const HeroSection = () => {
                                     src={welcomeImage}
                                     alt="พนักงานเกื้อกูลกันยินดีต้อนรับ"
                                     className="absolute w-[65%] h-[55%] object-cover rounded-[20px] shadow-xl z-20 bottom-4 -right-2 border-4 border-white dark:border-slate-700"
-                                    fetchPriority="high" decoding="sync"
+                                    loading="lazy" decoding="async"
                                     width="300" height="300"
                                 />
                             </div>
 
                             {/* Floating Card 1: Good Packaging (Top Right) */}
-                            <motion.div
-                                animate={floatingAnimation}
-                                className="absolute -top-6 -right-2 sm:-top-10 sm:-right-4 md:right-10 bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-primary-500"
-                            >
+                            <div className="absolute -top-6 -right-2 sm:-top-10 sm:-right-4 md:right-10 bg-white dark:bg-slate-800 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-primary-500 hero-float">
                                 <div className="bg-primary-100 p-1.5 sm:p-2 rounded-full text-primary-600">
                                     <Package className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </div>
@@ -146,14 +123,10 @@ const HeroSection = () => {
                                     <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าแพ็คดี</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">ใส่ใจทุกกล่อง</p>
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Floating Card 2: Quality Products (Bottom Left) */}
-                            <motion.div
-                                animate={floatingAnimation}
-                                transition={{ delay: 0.5 }}
-                                className="absolute bottom-4 -left-4 sm:-bottom-4 sm:-left-4 md:-left-8 bg-white dark:bg-slate-800 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-green-500"
-                            >
+                            <div className="absolute bottom-4 -left-4 sm:-bottom-4 sm:-left-4 md:-left-8 bg-white dark:bg-slate-800 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-green-500 hero-float" style={{ animationDelay: '1s' }}>
                                 <div className="bg-green-100 p-1.5 sm:p-2 rounded-full text-green-600">
                                     <BadgeCheck className="w-4 h-4 sm:w-6 sm:h-6" />
                                 </div>
@@ -161,14 +134,10 @@ const HeroSection = () => {
                                     <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">สินค้าคุณภาพ</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">การันตี 100%</p>
                                 </div>
-                            </motion.div>
+                            </div>
 
                             {/* Floating Card 3: Fast Delivery (Bottom Right) */}
-                            <motion.div
-                                animate={floatingAnimation}
-                                transition={{ delay: 1 }}
-                                className="absolute -bottom-6 right-4 sm:-bottom-6 sm:-right-4 md:right-20 bg-white dark:bg-slate-800 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-orange-500"
-                            >
+                            <div className="absolute -bottom-6 right-4 sm:-bottom-6 sm:-right-4 md:right-20 bg-white dark:bg-slate-800 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-xl flex items-center gap-2 sm:gap-3 z-30 border-l-4 border-orange-500 hero-float" style={{ animationDelay: '2s' }}>
                                 <div className="bg-orange-100 p-1.5 sm:p-2 rounded-full text-orange-600">
                                     <Truck className="w-4 h-4 sm:w-6 sm:h-6" />
                                 </div>
@@ -176,8 +145,8 @@ const HeroSection = () => {
                                     <p className="font-bold text-gray-800 dark:text-gray-100 text-[11px] sm:text-sm md:text-base">จัดส่งไว</p>
                                     <p className="text-[9px] sm:text-xs text-gray-500 dark:text-gray-400">ถึงมือทันใจ</p>
                                 </div>
-                            </motion.div>
-                        </motion.div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

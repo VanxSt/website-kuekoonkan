@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Tag, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const MotionLink = motion.create(Link);
 import shopImage from '../assets/kuekoonkan-shop-front.webp';
 
 const offers = [
@@ -47,144 +44,104 @@ const offers = [
 
 const PromotionalBanner = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const goToSlide = useCallback((index) => {
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+        setCurrentIndex(index);
+        setTimeout(() => setIsTransitioning(false), 600);
+    }, [isTransitioning]);
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % offers.length);
+            goToSlide((currentIndex + 1) % offers.length);
         }, 8000);
         return () => clearInterval(timer);
-    }, []);
+    }, [currentIndex, goToSlide]);
 
-    const slideVariants = {
-        enter: {
-            opacity: 0,
-            scale: 0.95
-        },
-        center: {
-            zIndex: 1,
-            opacity: 1,
-            scale: 1
-        },
-        exit: {
-            zIndex: 0,
-            opacity: 0,
-            scale: 1.05
-        }
-    };
-
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % offers.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + offers.length) % offers.length);
-    };
+    const offer = offers[currentIndex];
 
     return (
         <section className="relative w-full min-h-[450px] sm:min-h-[500px] md:min-h-[550px] overflow-hidden bg-gray-100 dark:bg-slate-950 flex items-center transition-colors duration-300" aria-label="โปรโมชั่นและข่าวสาร" role="region">
-            <AnimatePresence initial={false} mode="popLayout">
-                <motion.div
-                    key={currentIndex}
-                    custom={1}
-                    variants={slideVariants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{
-                        opacity: { duration: 0.5, ease: "easeInOut" },
-                        scale: { duration: 0.5, ease: "easeInOut" }
-                    }}
-                    className={`absolute inset-0 w-full h-full flex items-center justify-center ${offers[currentIndex].bgClass}`}
-                >
-                    <div className="max-w-7xl mx-auto px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between z-10">
+            <div
+                key={currentIndex}
+                className={`absolute inset-0 w-full h-full flex items-center justify-center ${offer.bgClass} promo-slide-enter`}
+            >
+                <div className="max-w-7xl mx-auto px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between z-10">
 
-                        <div className="text-center md:text-left text-white md:max-w-2xl lg:max-w-4xl relative z-20">
-                            <motion.div
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 }}
-                                className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-6"
-                            >
-                                <Clock size={16} aria-hidden="true" /> {offers[currentIndex].title}
-                            </motion.div>
-
-                            <motion.h2
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.3 }}
-                                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-md leading-snug whitespace-pre-line"
-                            >
-                                {offers[currentIndex].subtitle}
-                            </motion.h2>
-
-                            <motion.p
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.4 }}
-                                className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 opacity-90 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 whitespace-pre-line"
-                            >
-                                {offers[currentIndex].description}
-                            </motion.p>
-
-                            <MotionLink
-                                to={offers[currentIndex].link}
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.5 }}
-                                className="bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition inline-flex w-fit items-center gap-2 mx-auto md:mx-0"
-                            >
-                                {offers[currentIndex].code} <ArrowRight size={20} aria-hidden="true" />
-                            </MotionLink>
+                    <div className="text-center md:text-left text-white md:max-w-2xl lg:max-w-4xl relative z-20">
+                        <div
+                            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-bold mb-6 promo-fade-up"
+                            style={{ animationDelay: '0.1s' }}
+                        >
+                            <Clock size={16} aria-hidden="true" /> {offer.title}
                         </div>
 
-                        {/* Desktop Only: Side Image (lg and above) */}
-                        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[45%] pointer-events-none overflow-hidden z-0">
-                            {offers[currentIndex].image && (
-                                <motion.img
-                                    key={`img-desktop-${currentIndex}`}
-                                    src={offers[currentIndex].image}
-                                    alt={`${offers[currentIndex].altText} - เกื้อกูลกัน`}
-                                    initial={{ opacity: 0, x: 30 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.6 }}
-                                    className="h-full w-full object-cover object-center"
-                                    style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 35%)' }}
-                                    fetchPriority="high" decoding="sync"
+                        <h2
+                            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-md leading-snug whitespace-pre-line promo-fade-up"
+                            style={{ animationDelay: '0.2s' }}
+                        >
+                            {offer.subtitle}
+                        </h2>
+
+                        <p
+                            className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 opacity-90 font-medium leading-relaxed max-w-2xl mx-auto md:mx-0 whitespace-pre-line promo-fade-up"
+                            style={{ animationDelay: '0.3s' }}
+                        >
+                            {offer.description}
+                        </p>
+
+                        <Link
+                            to={offer.link}
+                            className="bg-white text-gray-900 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:scale-105 transition inline-flex w-fit items-center gap-2 mx-auto md:mx-0 promo-fade-up"
+                            style={{ animationDelay: '0.4s' }}
+                        >
+                            {offer.code} <ArrowRight size={20} aria-hidden="true" />
+                        </Link>
+                    </div>
+
+                    {/* Desktop Only: Side Image (lg and above) */}
+                    <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[45%] pointer-events-none overflow-hidden z-0">
+                        {offer.image && (
+                            <img
+                                key={`img-desktop-${currentIndex}`}
+                                src={offer.image}
+                                alt={`${offer.altText} - เกื้อกูลกัน`}
+                                className="h-full w-full object-cover object-center promo-slide-enter"
+                                style={{ maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 35%)' }}
+                                loading="lazy"
+                                width="800" height="600"
+                            />
+                        )}
+                    </div>
+
+                    {/* Mobile and iPad Only: New Full-Width Blended Layout (hidden on lg) */}
+                    <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 lg:hidden flex items-center justify-center">
+                        {offer.image ? (
+                            <>
+                                <img
+                                    key={`img-mobile-${currentIndex}`}
+                                    src={offer.image}
+                                    alt={`${offer.altText} - เกื้อกูลกัน`}
+                                    className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100 promo-slide-enter"
+                                    loading="lazy"
                                     width="800" height="600"
                                 />
-                            )}
-                        </div>
+                                {/* Tablet Overlay (md to lg) - lighter gradient, image mostly visible on right */}
+                                <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/60 to-transparent" style={{ width: '55%' }}></div>
 
-                        {/* Mobile and iPad Only: New Full-Width Blended Layout (hidden on lg) */}
-                        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0 lg:hidden flex items-center justify-center">
-                            {offers[currentIndex].image ? (
-                                <>
-                                    <motion.img
-                                        key={`img-mobile-${currentIndex}`}
-                                        src={offers[currentIndex].image}
-                                        alt={`${offers[currentIndex].altText} - เกื้อกูลกัน`}
-                                        initial={{ opacity: 0, scale: 1.05 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.8 }}
-                                        className="h-full w-full object-cover object-[80%_center] opacity-40 md:opacity-100"
-                                        fetchPriority="high" decoding="sync"
-                                        width="800" height="600"
-                                    />
-                                    {/* Tablet Overlay (md to lg) - lighter gradient, image mostly visible on right */}
-                                    <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-primary-600 via-primary-600/60 to-transparent" style={{ width: '55%' }}></div>
-
-                                    {/* Mobile Overlay (smaller than md) */}
-                                    <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 via-primary-500/40 to-transparent"></div>
-                                </>
-                            ) : (
-                                <div className="opacity-10 transform flex items-center justify-center w-full h-full">
-                                    <Tag size={300} aria-hidden="true" className="rotate-12 translate-x-10 translate-y-10 focus:outline-none" />
-                                </div>
-                            )}
-                        </div>
+                                {/* Mobile Overlay (smaller than md) */}
+                                <div className="absolute inset-0 bg-gradient-to-t md:hidden from-primary-600/80 via-primary-500/40 to-transparent"></div>
+                            </>
+                        ) : (
+                            <div className="opacity-10 transform flex items-center justify-center w-full h-full">
+                                <Tag size={300} aria-hidden="true" className="rotate-12 translate-x-10 translate-y-10 focus:outline-none" />
+                            </div>
+                        )}
                     </div>
-                </motion.div>
-            </AnimatePresence>
+                </div>
+            </div>
 
 
             {/* Indicators */}
@@ -192,7 +149,7 @@ const PromotionalBanner = () => {
                 {offers.map((_, index) => (
                     <button
                         key={index}
-                        onClick={() => setCurrentIndex(index)}
+                        onClick={() => goToSlide(index)}
                         className="w-12 h-12 flex items-center justify-center focus:outline-none group"
                         role="tab"
                         aria-selected={index === currentIndex}

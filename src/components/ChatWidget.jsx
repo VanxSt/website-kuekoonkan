@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MessageCircle, X, Phone, MessageSquare } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const ChatWidget = ({ isCookieVisible }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,41 +28,34 @@ const ChatWidget = ({ isCookieVisible }) => {
     return (
         <div className={`fixed right-6 z-50 flex flex-col items-end gap-4 transition-all duration-500 ${isCookieVisible ? 'bottom-32 md:bottom-28' : 'bottom-6'}`}>
             {/* Contact Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
-                        className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-slate-700 p-4 w-64 mb-2"
-                    >
-                        <p className="font-bold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
-                            เลือกช่องทางติดต่อ
-                            <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white">
-                                <X size={20} />
-                            </button>
-                        </p>
-                        <div className="space-y-3">
-                            {contactLinks.map((link, i) => (
-                                <a
-                                    key={i}
-                                    href={link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700 transition group"
-                                >
-                                    <div className={`${link.color} p-2 rounded-lg text-white`}>
-                                        <link.icon size={20} />
-                                    </div>
-                                    <span className="font-medium text-gray-700 dark:text-gray-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition">
-                                        {link.name}
-                                    </span>
-                                </a>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {isOpen && (
+                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-slate-700 p-4 w-64 mb-2 chat-widget-enter">
+                    <p className="font-bold text-gray-900 dark:text-white mb-4 flex justify-between items-center">
+                        เลือกช่องทางติดต่อ
+                        <button onClick={() => setIsOpen(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                            <X size={20} />
+                        </button>
+                    </p>
+                    <div className="space-y-3">
+                        {contactLinks.map((link, i) => (
+                            <a
+                                key={i}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-slate-700 transition group"
+                            >
+                                <div className={`${link.color} p-2 rounded-lg text-white`}>
+                                    <link.icon size={20} />
+                                </div>
+                                <span className="font-medium text-gray-700 dark:text-gray-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition">
+                                    {link.name}
+                                </span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             {/* Main Floating Button */}
             <button

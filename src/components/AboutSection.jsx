@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Users, Heart, Truck, ThumbsUp, ShoppingCart, Package, Database, Utensils } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const AboutSection = () => {
+    const sectionRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <section id="about" className="py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300" aria-label="เกี่ยวกับเกื้อกูลกัน">
+        <section ref={sectionRef} id="about" className="py-20 bg-white dark:bg-slate-900 overflow-hidden transition-colors duration-300" aria-label="เกี่ยวกับเกื้อกูลกัน">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                    >
+                    <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
                         <div className="inline-block px-4 py-1.5 bg-primary-50 dark:bg-slate-800 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-6">
                             เกี่ยวกับเรา
                         </div>
@@ -55,56 +66,26 @@ const AboutSection = () => {
                                 <div className="text-xs text-gray-500 dark:text-gray-400">คะแนนรีวิว</div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Bento Grid Visuals */}
-                    <div className="relative">
+                    <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
                         <div className="grid grid-cols-2 gap-4">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="bg-primary-50 dark:bg-slate-800 rounded-3xl p-8 flex items-center justify-center aspect-square"
-                            >
+                            <div className="bg-primary-50 dark:bg-slate-800 rounded-3xl p-8 flex items-center justify-center aspect-square">
                                 <ShoppingCart size={64} className="text-primary-500" />
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                                className="bg-sky-50 dark:bg-sky-900/30 rounded-3xl p-8 flex items-center justify-center aspect-[4/3] mt-12"
-                            >
+                            </div>
+                            <div className="bg-sky-50 dark:bg-sky-900/30 rounded-3xl p-8 flex items-center justify-center aspect-[4/3] mt-12">
                                 <Database size={48} className="text-sky-500" />
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
-                                className="bg-indigo-50 dark:bg-indigo-900/30 rounded-3xl p-8 flex items-center justify-center aspect-[4/3] -mt-12"
-                            >
+                            </div>
+                            <div className="bg-indigo-50 dark:bg-indigo-900/30 rounded-3xl p-8 flex items-center justify-center aspect-[4/3] -mt-12">
                                 <Package size={48} className="text-indigo-500" />
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 }}
-                                className="bg-blue-50 dark:bg-blue-900/30 rounded-3xl p-8 flex items-center justify-center aspect-square"
-                            >
+                            </div>
+                            <div className="bg-blue-50 dark:bg-blue-900/30 rounded-3xl p-8 flex items-center justify-center aspect-square">
                                 <Utensils size={64} className="text-blue-500" />
-                            </motion.div>
+                            </div>
                         </div>
 
-                        <motion.div
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.5 }}
-                            className="absolute bottom-4 sm:bottom-10 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-xl flex items-center gap-3 sm:gap-4 z-10 w-[90%] sm:w-max min-w-max sm:min-w-0 border border-gray-100 dark:border-slate-700"
-                        >
+                        <div className={`absolute bottom-4 sm:bottom-10 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-xl flex items-center gap-3 sm:gap-4 z-10 w-[90%] sm:w-max min-w-max sm:min-w-0 border border-gray-100 dark:border-slate-700 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
                             <div className="bg-primary-500 p-2 rounded-lg text-white shrink-0">
                                 <Heart size={20} fill="currentColor" />
                             </div>
@@ -112,7 +93,7 @@ const AboutSection = () => {
                                 <p className="font-bold text-gray-900 dark:text-white text-sm truncate">เกื้อกูลกัน</p>
                                 <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 truncate">พร้อมดูแลทุกความต้องการ</p>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
                 </div>

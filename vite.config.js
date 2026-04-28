@@ -8,4 +8,22 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  build: {
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Optimize chunk size
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Split vendor libraries into separate chunks
+          'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
+        },
+      },
+    },
+    // Target modern browsers for smaller output
+    target: 'es2020',
+    // Minify with esbuild (faster than terser)
+    minify: 'esbuild',
+  },
 })

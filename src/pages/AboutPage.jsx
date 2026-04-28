@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Users, Heart, Truck, ThumbsUp, ShoppingCart, Package, Clock, Award, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import shopImage from '../assets/kuekoonkan-shop-front.webp';
 import welcomeImage from '../assets/kuekoonkan-welcome-staff.webp';
 
+const useInView = (threshold = 0.1) => {
+    const ref = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+            { threshold }
+        );
+        if (ref.current) observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, [threshold]);
+    return [ref, isVisible];
+};
+
 const AboutPage = () => {
+    const [statsRef, statsVisible] = useInView(0.1);
+    const [valuesRef, valuesVisible] = useInView(0.1);
+
     const stats = [
         { icon: Users, value: '500+', label: 'ลูกค้าที่วางใจ', color: 'text-blue-500', bg: 'bg-blue-50' },
         { icon: Heart, value: '5+', label: 'ปีที่ให้บริการ', color: 'text-pink-500', bg: 'bg-pink-50' },
@@ -50,24 +66,21 @@ const AboutPage = () => {
             </section>
 
             {/* Stats */}
-            <section className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300" aria-label="ตัวเลขสำคัญ">
+            <section ref={statsRef} className="py-16 bg-white dark:bg-slate-900 transition-colors duration-300" aria-label="ตัวเลขสำคัญ">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {stats.map((stat, i) => (
-                            <motion.div
+                            <div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="text-center p-6 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm dark:bg-slate-800"
+                                className={`text-center p-6 rounded-2xl border border-gray-100 dark:border-slate-700 shadow-sm dark:bg-slate-800 transition-all duration-500 ${statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                                style={{ transitionDelay: `${i * 100}ms` }}
                             >
                                 <div className={`w-14 h-14 ${stat.bg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                                     <stat.icon size={28} className={stat.color} />
                                 </div>
                                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
                                 <div className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -84,14 +97,14 @@ const AboutPage = () => {
                             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">เรื่องราวของเรา</h2>
                             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                                 <p className="text-lg">
-                                    จากรถเข็นขายข้าวแกงเล็ก ๆ สู่ห้องแถวของร้าน <span className="font-semibold text-primary-600">“จิราภัณฑ์”</span> ที่ได้ยืนอยู่เคียงข้างชาวชุมชนการเคหะและพื้นที่ใกล้เคียง
-                                    จุดเริ่มต้นของเรามาจาก <span className="font-semibold text-primary-600">“คุณยายกิมเลี้ยง”</span> คนที่เคยเป็นแม่ค้าข้าวแกงมาก่อน จึงเข้าใจหัวใจของคนทำมาหากินเป็นอย่างดี
-                                    เราจึงค่อย ๆ เติมสินค้า ตั้งแต่ข้าวสาร อาหารแห้ง ไปจนถึงอุปกรณ์ทำมาหากิน เพื่อให้ร้านของเรา เป็นมากกว่าที่ซื้อของ แต่เป็น <span className="font-semibold text-primary-600">“ที่พึ่งของคนหาเช้ากินค่ำ”</span>
+                                    จากรถเข็นขายข้าวแกงเล็ก ๆ สู่ห้องแถวของร้าน <span className="font-semibold text-primary-600">"จิราภัณฑ์"</span> ที่ได้ยืนอยู่เคียงข้างชาวชุมชนการเคหะและพื้นที่ใกล้เคียง
+                                    จุดเริ่มต้นของเรามาจาก <span className="font-semibold text-primary-600">"คุณยายกิมเลี้ยง"</span> คนที่เคยเป็นแม่ค้าข้าวแกงมาก่อน จึงเข้าใจหัวใจของคนทำมาหากินเป็นอย่างดี
+                                    เราจึงค่อย ๆ เติมสินค้า ตั้งแต่ข้าวสาร อาหารแห้ง ไปจนถึงอุปกรณ์ทำมาหากิน เพื่อให้ร้านของเรา เป็นมากกว่าที่ซื้อของ แต่เป็น <span className="font-semibold text-primary-600">"ที่พึ่งของคนหาเช้ากินค่ำ"</span>
                                 </p>
                                 <p className="text-lg">
-                                    วันนี้…เราไม่ได้แค่เติบโตในขนาดของร้าน แต่เราเติบโตใน <span className="font-semibold text-primary-600">“ความเข้าใจ”</span> และ <span className="font-semibold text-primary-600">“ความตั้งใจ”</span> เราได้เห็นลูกค้าหลายคน
-                                    เริ่มต้นจากศูนย์ จนมีร้าน มีอาชีพ มีรายได้ที่มั่นคง และนั่นทำให้เราเชื่อมั่นมากขึ้นว่า การเติบโตที่ยั่งยืน คือการเติบโตแบบ <span className="font-bold text-primary-600">“เกื้อกูลกัน”</span> ทั้งลูกค้า คู่ค้า
-                                    พนักงาน และชุมชน นั่นคือเหตุผลที่เราตัดสินใจก้าวสู่บทใหม่ ภายใต้ชื่อ <span className="font-bold text-primary-600 dark:text-primary-400">“เกื้อกูลกัน”</span>
+                                    วันนี้…เราไม่ได้แค่เติบโตในขนาดของร้าน แต่เราเติบโตใน <span className="font-semibold text-primary-600">"ความเข้าใจ"</span> และ <span className="font-semibold text-primary-600">"ความตั้งใจ"</span> เราได้เห็นลูกค้าหลายคน
+                                    เริ่มต้นจากศูนย์ จนมีร้าน มีอาชีพ มีรายได้ที่มั่นคง และนั่นทำให้เราเชื่อมั่นมากขึ้นว่า การเติบโตที่ยั่งยืน คือการเติบโตแบบ <span className="font-bold text-primary-600">"เกื้อกูลกัน"</span> ทั้งลูกค้า คู่ค้า
+                                    พนักงาน และชุมชน นั่นคือเหตุผลที่เราตัดสินใจก้าวสู่บทใหม่ ภายใต้ชื่อ <span className="font-bold text-primary-600 dark:text-primary-400">"เกื้อกูลกัน"</span>
                                 </p>
                                 <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm my-6 border-l-4 border-primary-500">
                                     <h3 className="font-bold text-gray-900 dark:text-white mb-4 text-lg">วันนี้เรามีทั้งหมด 2 สาขา</h3>
@@ -107,10 +120,10 @@ const AboutPage = () => {
                                     </ul>
                                 </div>
                                 <p className="text-lg font-medium text-gray-800 dark:text-gray-200">
-                                    และจากนี้ไป… เราจะไม่หยุดแค่ “ขายของ” แต่เราจะยกระดับตัวเอง สู่การเป็น <span className="font-bold text-primary-600 dark:text-primary-400">“ผู้เชี่ยวชาญด้านการจัดหาและบริการด้านวัตถุดิบสำหรับกิจการอาหาร”</span> เราจะคัดสรรของที่ใช่ แนะนำของที่เหมาะสม และช่วยให้ลูกค้าของเรา <span className="font-semibold text-primary-600 dark:text-primary-400">“เติบโต”</span>
+                                    และจากนี้ไป… เราจะไม่หยุดแค่ "ขายของ" แต่เราจะยกระดับตัวเอง สู่การเป็น <span className="font-bold text-primary-600 dark:text-primary-400">"ผู้เชี่ยวชาญด้านการจัดหาและบริการด้านวัตถุดิบสำหรับกิจการอาหาร"</span> เราจะคัดสรรของที่ใช่ แนะนำของที่เหมาะสม และช่วยให้ลูกค้าของเรา <span className="font-semibold text-primary-600 dark:text-primary-400">"เติบโต"</span>
                                 </p>
                                 <p className="text-lg">
-                                    เราจะพัฒนาอย่างต่อเนื่อง ทั้งสินค้า ระบบ และการบริการ เพื่อให้ทุกคนที่เข้ามาที่นี่ มั่นใจได้ว่า ที่นี่…คือแหล่งวัตถุดิบที่คิดมาแล้วเพื่อคนทำอาชีพจริง เพราะวันนี้… เราคือ <span className="font-bold text-primary-600 dark:text-primary-400">“มืออาชีพ”</span> ที่เติบโตมาพร้อมกับชุมชน และพร้อมจะเป็นพาร์ทเนอร์ในการเติบโตของทุกคนต่อไป
+                                    เราจะพัฒนาอย่างต่อเนื่อง ทั้งสินค้า ระบบ และการบริการ เพื่อให้ทุกคนที่เข้ามาที่นี่ มั่นใจได้ว่า ที่นี่…คือแหล่งวัตถุดิบที่คิดมาแล้วเพื่อคนทำอาชีพจริง เพราะวันนี้… เราคือ <span className="font-bold text-primary-600 dark:text-primary-400">"มืออาชีพ"</span> ที่เติบโตมาพร้อมกับชุมชน และพร้อมจะเป็นพาร์ทเนอร์ในการเติบโตของทุกคนต่อไป
                                 </p>
                             </div>
                             <Link to="/products" className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-3 rounded-full font-bold hover:bg-primary-600 transition">
@@ -122,7 +135,7 @@ const AboutPage = () => {
             </section>
 
             {/* Values */}
-            <section className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300" aria-label="จุดเด่นของเรา">
+            <section ref={valuesRef} className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300" aria-label="จุดเด่นของเรา">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">ทำไมต้องเลือก<span className="text-primary-500">เกื้อกูลกัน</span></h2>
@@ -130,20 +143,17 @@ const AboutPage = () => {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {values.map((item, i) => (
-                            <motion.article
+                            <article
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="bg-gray-50 dark:bg-slate-800 p-8 rounded-2xl hover:shadow-md transition"
+                                className={`bg-gray-50 dark:bg-slate-800 p-8 rounded-2xl hover:shadow-md transition-all duration-500 ${valuesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                                style={{ transitionDelay: `${i * 100}ms` }}
                             >
                                 <div className="w-14 h-14 bg-primary-100 dark:bg-slate-700 rounded-xl flex items-center justify-center mb-4">
                                     <item.icon size={28} className="text-primary-600 dark:text-primary-400" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
                                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{item.desc}</p>
-                            </motion.article>
+                            </article>
                         ))}
                     </div>
                 </div>
